@@ -1,3380 +1,3311 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="R2 Heavy Equipment - Rental alat berat profesional dengan layanan berbasis online untuk seluruh Indonesia.">
-
-    <meta name="keywords"
-        content="rental alat berat, sewa excavator, sewa bulldozer, sewa wheel loader, R2 Heavy Equipment">
-
-    <meta name="author" content="R2 Heavy Equipment">
-
-    <title>R2 Heavy Equipment | Rental Alat Berat Nasional</title>
-
-    <style>
-
-        /* =====================================================
-           RESET
-        ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #17202b;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        button,
-        input,
-        textarea,
-        select {
-            font-family: inherit;
-        }
-
-
-        /* =====================================================
-           COLOR
-        ===================================================== */
-
-        :root {
-            --navy: #0b1f3a;
-            --navy-dark: #061529;
-            --navy-light: #12345a;
-
-            --orange: #f58220;
-            --orange-light: #ff9d4a;
-
-            --white: #ffffff;
-            --light: #f5f7fa;
-            --light-orange: #fff3e8;
-
-            --gray: #687587;
-            --dark: #17202b;
-
-            --border: #e5eaf0;
-
-            --green: #20b968;
-
-            --shadow: 0 15px 40px rgba(11, 31, 58, 0.10);
-        }
-
-
-        /* =====================================================
-           GLOBAL
-        ===================================================== */
-
-        .container {
-            width: 100%;
-            max-width: 1180px;
-            margin: auto;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        section {
-            padding: 85px 0;
-        }
-
-        .section-label {
-            color: var(--orange);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            color: var(--navy);
-            font-size: 42px;
-            line-height: 1.15;
-            margin-bottom: 15px;
-        }
-
-        .section-description {
-            color: var(--gray);
-            max-width: 600px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-
-            padding: 14px 22px;
-
-            border-radius: 8px;
-
-            font-weight: 800;
-            font-size: 14px;
-
-            cursor: pointer;
-
-            transition: 0.25s ease;
-        }
-
-        .btn-orange {
-            background: var(--orange);
-            color: white;
-        }
-
-        .btn-orange:hover {
-            background: #dc6c10;
-            transform: translateY(-2px);
-        }
-
-        .btn-navy {
-            background: var(--navy);
-            color: white;
-        }
-
-        .btn-navy:hover {
-            background: var(--navy-light);
-        }
-
-        .btn-outline {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--navy);
-        }
-
-
-        /* =====================================================
-           TOP BAR
-        ===================================================== */
-
-        .topbar {
-            background: var(--navy-dark);
-            color: #d9e3ef;
-
-            font-size: 13px;
-
-            padding: 9px 0;
-        }
-
-        .topbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: white;
-
-            box-shadow:
-                0 3px 20px rgba(0, 0, 0, 0.07);
-        }
-
-        .navbar {
-            height: 78px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-
-            background: var(--orange);
-            color: white;
-
-            border-radius: 10px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 22px;
-        }
-
-        .logo-text strong {
-            display: block;
-
-            color: var(--navy);
-
-            font-size: 20px;
-            line-height: 1;
-        }
-
-        .logo-text span {
-            display: block;
-
-            color: var(--orange);
-
-            font-size: 9px;
-            font-weight: 800;
-
-            letter-spacing: 2px;
-
-            margin-top: 5px;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .nav-menu a {
-            transition: 0.2s;
-        }
-
-        .nav-menu a:hover {
-            color: var(--orange);
-        }
-
-        .nav-contact {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .phone-info strong {
-            display: block;
-            color: var(--navy);
-            font-size: 14px;
-        }
-
-        .phone-info span {
-            color: var(--gray);
-            font-size: 11px;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-
-            border: none;
-
-            width: 44px;
-            height: 44px;
-
-            border-radius: 8px;
-
-            background: var(--orange);
-            color: white;
-
-            font-size: 21px;
-
-            cursor: pointer;
-        }
-
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            min-height: 650px;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(5, 21, 40, 0.96) 0%,
-                    rgba(5, 21, 40, 0.78) 45%,
-                    rgba(5, 21, 40, 0.18) 100%
-                ),
-
-                url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85")
-                center / cover;
-        }
-
-        .hero-content {
-            color: white;
-        }
-
-        .hero-label {
-            color: var(--orange-light);
-
-            font-size: 14px;
-            font-weight: 800;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            max-width: 750px;
-
-            font-size: 60px;
-            line-height: 1.05;
-
-            margin: 15px 0 20px;
-        }
-
-        .hero h1 span {
-            color: var(--orange-light);
-        }
-
-        .hero-description {
-            max-width: 590px;
-
-            color: #d7e1ec;
-
-            font-size: 17px;
-
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .hero-info {
-            display: flex;
-            gap: 35px;
-
-            margin-top: 45px;
-        }
-
-        .hero-info-item strong {
-            display: block;
-
-            font-size: 25px;
-            color: white;
-        }
-
-        .hero-info-item span {
-            color: #c6d3e1;
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           EQUIPMENT
-        ===================================================== */
-
-        .equipment-section {
-            background: var(--light);
-        }
-
-        .section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-
-            gap: 30px;
-
-            margin-bottom: 30px;
-        }
-
-        .filters {
-            display: flex;
-            gap: 8px;
-
-            overflow-x: auto;
-
-            margin-bottom: 25px;
-
-            padding-bottom: 5px;
-        }
-
-        .filter-btn {
-            flex-shrink: 0;
-
-            border: 1px solid var(--border);
-
-            background: white;
-
-            color: var(--navy);
-
-            padding: 10px 16px;
-
-            border-radius: 30px;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--navy);
-            border-color: var(--navy);
-            color: white;
-        }
-
-        .equipment-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 20px;
-        }
-
-        .equipment-card {
-            background: white;
-
-            border-radius: 16px;
-
-            overflow: hidden;
-
-            border: 1px solid var(--border);
-
-            box-shadow:
-                0 8px 25px rgba(11, 31, 58, 0.06);
-
-            transition: 0.25s;
-        }
-
-        .equipment-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow: var(--shadow);
-        }
-
-        .equipment-image {
-            height: 210px;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .equipment-image img {
-            height: 100%;
-            object-fit: cover;
-
-            transition: 0.4s;
-        }
-
-        .equipment-card:hover .equipment-image img {
-            transform: scale(1.05);
-        }
-
-        .status {
-            position: absolute;
-
-            top: 12px;
-            left: 12px;
-
-            background: var(--orange);
-
-            color: white;
-
-            font-size: 11px;
-
-            font-weight: 800;
-
-            padding: 6px 10px;
-
-            border-radius: 6px;
-        }
-
-        .equipment-content {
-            padding: 18px;
-        }
-
-        .equipment-content h3 {
-            color: var(--navy);
-
-            font-size: 19px;
-
-            margin-bottom: 8px;
-        }
-
-        .equipment-content p {
-            color: var(--gray);
-
-            font-size: 13px;
-
-            min-height: 65px;
-        }
-
-        .equipment-button {
-            width: 100%;
-
-            margin-top: 15px;
-
-            border: 1px solid var(--navy);
-
-            background: white;
-
-            color: var(--navy);
-
-            padding: 11px;
-
-            border-radius: 7px;
-
-            font-weight: 800;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-        .equipment-button:hover {
-            background: var(--navy);
-            color: white;
-        }
-
-
-        /* =====================================================
-           ABOUT / POSITIONING
-        ===================================================== */
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 55px;
-
-            align-items: center;
-        }
-
-        .about-image {
-            border-radius: 20px;
-
-            overflow: hidden;
-
-            box-shadow: var(--shadow);
-        }
-
-        .about-image img {
-            height: 500px;
-
-            object-fit: cover;
-        }
-
-        .about-content h2 {
-            color: var(--navy);
-
-            font-size: 43px;
-
-            line-height: 1.15;
-
-            margin-bottom: 15px;
-        }
-
-        .about-content > p {
-            color: var(--gray);
-
-            margin-bottom: 25px;
-        }
-
-        .feature-list {
-            display: grid;
-
-            gap: 17px;
-        }
-
-        .feature {
-            display: flex;
-
-            gap: 13px;
-        }
-
-        .feature-icon {
-            flex-shrink: 0;
-
-            width: 45px;
-            height: 45px;
-
-            background: var(--light-orange);
-
-            color: var(--orange);
-
-            border-radius: 10px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 20px;
-        }
-
-        .feature h3 {
-            color: var(--navy);
-
-            font-size: 16px;
-
-            margin-bottom: 3px;
-        }
-
-        .feature p {
-            color: var(--gray);
-
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           SERVICE
-        ===================================================== */
-
-        .services-section {
-            background: var(--light);
-        }
-
-        .service-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-
-            margin-top: 35px;
-        }
-
-        .service-card {
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 16px;
-
-            border: 1px solid var(--border);
-
-            transition: 0.25s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow: var(--shadow);
-        }
-
-        .service-icon {
-            width: 55px;
-            height: 55px;
-
-            background: var(--light-orange);
-
-            color: var(--orange);
-
-            border-radius: 12px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 25px;
-
-            margin-bottom: 18px;
-        }
-
-        .service-card h3 {
-            color: var(--navy);
-
-            margin-bottom: 8px;
-        }
-
-        .service-card p {
-            color: var(--gray);
-
-            font-size: 14px;
-        }
-
-
-        /* =====================================================
-           NATIONAL
-        ===================================================== */
-
-        .national-section {
-            background: var(--navy);
-
-            color: white;
-
-            text-align: center;
-        }
-
-        .national-section .section-label {
-            color: var(--orange-light);
-        }
-
-        .national-section h2 {
-            font-size: 45px;
-
-            max-width: 800px;
-
-            margin: auto auto 15px;
-        }
-
-        .national-section p {
-            max-width: 680px;
-
-            margin: auto;
-
-            color: #d3dfeb;
-        }
-
-        .regions {
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-top: 30px;
-        }
-
-        .region {
-            border: 1px solid rgba(255,255,255,.18);
-
-            padding: 10px 18px;
-
-            border-radius: 30px;
-
-            color: #dbe5ef;
-
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           PROCESS
-        ===================================================== */
-
-        .process-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 20px;
-
-            margin-top: 35px;
-        }
-
-        .process {
-            position: relative;
-
-            padding: 25px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 15px;
-        }
-
-        .process-number {
-            width: 40px;
-            height: 40px;
-
-            background: var(--orange);
-
-            color: white;
-
-            border-radius: 50%;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-weight: 900;
-
-            margin-bottom: 18px;
-        }
-
-        .process h3 {
-            color: var(--navy);
-
-            font-size: 17px;
-
-            margin-bottom: 7px;
-        }
-
-        .process p {
-            color: var(--gray);
-
-            font-size: 13px;
-        }
-
-
-        /* =====================================================
-           CTA
-        ===================================================== */
-
-        .cta-box {
-            background:
-                linear-gradient(
-                    120deg,
-                    var(--orange),
-                    #e96f0f
-                );
-
-            color: white;
-
-            border-radius: 22px;
-
-            padding: 50px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 30px;
-        }
-
-        .cta-box h2 {
-            font-size: 40px;
-
-            line-height: 1.1;
-
-            margin-bottom: 10px;
-        }
-
-        .cta-box p {
-            color: #fff0e5;
-        }
-
-        .cta-button {
-            background: var(--navy);
-
-            color: white;
-
-            white-space: nowrap;
-        }
-
-
-        /* =====================================================
-           CONTACT
-        ===================================================== */
-
-        .contact-section {
-            background: var(--light);
-        }
-
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 35px;
-        }
-
-        .contact-info {
-            background: var(--navy);
-
-            color: white;
-
-            padding: 35px;
-
-            border-radius: 18px;
-        }
-
-        .contact-info h2 {
-            font-size: 32px;
-
-            margin-bottom: 12px;
-        }
-
-        .contact-info > p {
-            color: #cbd8e6;
-
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-
-            gap: 14px;
-
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 43px;
-            height: 43px;
-
-            flex-shrink: 0;
-
-            border-radius: 9px;
-
-            background: rgba(255,255,255,.1);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            color: var(--orange-light);
-        }
-
-        .contact-item small {
-            display: block;
-
-            color: #9fb0c2;
-
-            font-size: 11px;
-        }
-
-        .contact-item strong {
-            font-size: 14px;
-        }
-
-        .contact-form {
-            background: white;
-
-            padding: 35px;
-
-            border-radius: 18px;
-
-            border: 1px solid var(--border);
-
-            box-shadow: 0 8px 25px rgba(11,31,58,.05);
-        }
-
-        .contact-form h2 {
-            color: var(--navy);
-
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-
-            color: var(--navy);
-
-            font-weight: 700;
-
-            font-size: 13px;
-
-            margin-bottom: 6px;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-
-            padding: 12px 14px;
-
-            border: 1px solid var(--border);
-
-            border-radius: 8px;
-
-            outline: none;
-
-            background: white;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--orange);
-        }
-
-        .form-group textarea {
-            min-height: 110px;
-
-            resize: vertical;
-        }
-
-        .contact-form button {
-            width: 100%;
-
-            border: none;
-
-            margin-top: 5px;
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            background: var(--navy-dark);
-
-            color: #b9c8d8;
-
-            padding: 55px 0 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns:
-                1.4fr 1fr 1fr 1fr;
-
-            gap: 35px;
-        }
-
-        footer h3 {
-            color: white;
-
-            margin-bottom: 15px;
-
-            font-size: 16px;
-        }
-
-        footer p,
-        footer li {
-            font-size: 13px;
-        }
-
-        footer ul {
-            list-style: none;
-
-            display: grid;
-
-            gap: 9px;
-        }
-
-        footer a:hover {
-            color: var(--orange-light);
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,.1);
-
-            margin-top: 40px;
-
-            padding-top: 20px;
-
-            font-size: 12px;
-
-            text-align: center;
-        }
-
-
-        /* =====================================================
-           WHATSAPP FLOATING
-        ===================================================== */
-
-        .whatsapp-float {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            z-index: 999;
-
-            width: 60px;
-            height: 60px;
-
-            background: var(--green);
-
-            color: white;
-
-            border-radius: 50%;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 27px;
-
-            box-shadow:
-                0 8px 25px rgba(0,0,0,.25);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-        }
-
-
-        /* =====================================================
-           MODAL
-        ===================================================== */
-
-        .modal {
-            display: none;
-
-            position: fixed;
-
-            inset: 0;
-
-            background: rgba(3, 14, 27, .8);
-
-            z-index: 2000;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 20px;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-box {
-            max-width: 550px;
-
-            width: 100%;
-
-            background: white;
-
-            border-radius: 18px;
-
-            overflow: hidden;
-
-            position: relative;
-        }
-
-        .modal-box img {
-            height: 270px;
-
-            object-fit: cover;
-        }
-
-        .modal-content {
-            padding: 25px;
-        }
-
-        .modal-content h2 {
-            color: var(--navy);
-
-            margin-bottom: 8px;
-        }
-
-        .modal-content p {
-            color: var(--gray);
-
-            margin-bottom: 20px;
-        }
-
-        .modal-close {
-            position: absolute;
-
-            right: 15px;
-            top: 15px;
-
-            width: 38px;
-            height: 38px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: white;
-
-            color: var(--navy);
-
-            font-size: 22px;
-
-            cursor: pointer;
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media(max-width: 1050px) {
-
-            .equipment-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .process-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .nav-menu {
-                gap: 15px;
-            }
-
-        }
-
-
-        @media(max-width: 800px) {
-
-            .topbar {
-                display: none;
-            }
-
-            .navbar {
-                height: 68px;
-            }
-
-            .nav-contact {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-
-                position: absolute;
-
-                top: 68px;
-
-                left: 0;
-                right: 0;
-
-                background: white;
-
-                padding: 20px;
-
-                box-shadow:
-                    0 10px 20px rgba(0,0,0,.1);
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 0;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                width: 100%;
-
-                padding: 12px 0;
-
-                border-bottom: 1px solid var(--border);
-            }
-
-            .hero {
-                min-height: 680px;
-
-                background-position:
-                    65% center;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .hero-description {
-                font-size: 15px;
-            }
-
-            .hero-info {
-                gap: 20px;
-            }
-
-            .hero-info-item strong {
-                font-size: 21px;
-            }
-
-            .section-title {
-                font-size: 34px;
-            }
-
-            .section-heading {
-                display: block;
-            }
-
-            .section-heading .section-description {
-                margin-top: 10px;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image img {
-                height: 330px;
-            }
-
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .national-section h2 {
-                font-size: 35px;
-            }
-
-            .cta-box {
-                padding: 32px 25px;
-
-                display: block;
-            }
-
-            .cta-box h2 {
-                font-size: 32px;
-            }
-
-            .cta-button {
-                margin-top: 20px;
-
-                width: 100%;
-            }
-
-            .footer-grid {
-                grid-template-columns:
-                    1fr 1fr;
-            }
-
-        }
-
-
-        @media(max-width: 520px) {
-
-            section {
-                padding: 60px 0;
-            }
-
-            .container {
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            .logo-text strong {
-                font-size: 17px;
-            }
-
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .hero {
-                min-height: 690px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-            }
-
-            .hero-info {
-                display: grid;
-
-                grid-template-columns:
-                    1fr 1fr;
-
-                gap: 20px;
-            }
-
-            .equipment-grid {
-                grid-template-columns:
-                    1fr 1fr;
-
-                gap: 10px;
-            }
-
-            .equipment-image {
-                height: 130px;
-            }
-
-            .equipment-content {
-                padding: 13px;
-            }
-
-            .equipment-content h3 {
-                font-size: 15px;
-            }
-
-            .equipment-content p {
-                font-size: 11px;
-
-                min-height: 72px;
-            }
-
-            .equipment-button {
-                font-size: 11px;
-
-                padding: 9px;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .national-section h2 {
-                font-size: 30px;
-            }
-
-            .contact-info,
-            .contact-form {
-                padding: 25px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="R2 Heavy Equipment - Rental alat berat berbasis online dengan jangkauan seluruh Indonesia.">
+
+<title>R2 Heavy Equipment | Rental Alat Berat Nasional</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #17202b;
+    background: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+:root {
+    --navy: #0b1f3a;
+    --navy-dark: #061529;
+    --navy-light: #12345a;
+    --orange: #f58220;
+    --orange-light: #ff9d4a;
+    --white: #fff;
+    --light: #f5f7fa;
+    --light-orange: #fff3e8;
+    --gray: #687587;
+    --border: #e4e9ef;
+    --green: #20b968;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-label {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    color: var(--navy);
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: var(--gray);
+    max-width: 650px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn-orange {
+    background: var(--orange);
+    color: white;
+}
+
+.btn-orange:hover {
+    background: #db6c10;
+    transform: translateY(-2px);
+}
+
+.btn-navy {
+    background: var(--navy);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--navy);
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    background: var(--navy-dark);
+    color: #d9e3ef;
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.topbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 3px 20px rgba(0,0,0,.07);
+}
+
+.navbar {
+    height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--orange);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.logo-text strong {
+    display: block;
+    color: var(--navy);
+    font-size: 19px;
+    line-height: 1;
+}
+
+.logo-text span {
+    display: block;
+    color: var(--orange);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav-menu a:hover {
+    color: var(--orange);
+}
+
+.nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.phone-info strong {
+    display: block;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.phone-info span {
+    color: var(--gray);
+    font-size: 11px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background: var(--orange);
+    color: white;
+    font-size: 21px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,21,40,.96),
+            rgba(5,21,40,.72),
+            rgba(5,21,40,.15)
+        ),
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+}
+
+.hero-content {
+    color: white;
+}
+
+.hero-label {
+    color: var(--orange-light);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 760px;
+    font-size: 60px;
+    line-height: 1.05;
+    margin: 15px 0 20px;
+}
+
+.hero h1 span {
+    color: var(--orange-light);
+}
+
+.hero-description {
+    max-width: 600px;
+    color: #d7e1ec;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-info {
+    display: flex;
+    gap: 40px;
+    margin-top: 45px;
+}
+
+.hero-info-item strong {
+    display: block;
+    font-size: 25px;
+}
+
+.hero-info-item span {
+    color: #c6d3e1;
+    font-size: 13px;
+}
+
+
+/* =========================
+   EQUIPMENT
+========================= */
+
+.equipment-section {
+    background: var(--light);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--navy);
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: white;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.equipment-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: .25s;
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(11,31,58,.12);
+}
+
+.equipment-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background: #dfe5eb;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.equipment-card:hover img {
+    transform: scale(1.05);
+}
+
+.status {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    left: 12px;
+    background: var(--orange);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.equipment-content {
+    padding: 18px;
+}
+
+.category-name {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.equipment-content h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin: 5px 0 7px;
+}
+
+.equipment-content p {
+    color: var(--gray);
+    font-size: 13px;
+    min-height: 63px;
+}
+
+.equipment-button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px;
+    border: 1px solid var(--navy);
+    border-radius: 7px;
+    background: white;
+    color: var(--navy);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.equipment-button:hover {
+    background: var(--navy);
+    color: white;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-image {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    color: var(--navy);
+    font-size: 43px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.about-content > p {
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.feature-list {
+    display: grid;
+    gap: 17px;
+}
+
+.feature {
+    display: flex;
+    gap: 13px;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--light-orange);
+    color: var(--orange);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature h3 {
+    color: var(--navy);
+    font-size: 16px;
+}
+
+.feature p {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-section {
+    background: var(--light);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: .25s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(11,31,58,.10);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--light-orange);
+    color: var(--orange);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.service-card h3 {
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* =========================
+   NATIONAL
+========================= */
+
+.national-section {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+}
+
+.national-section .section-label {
+    color: var(--orange-light);
+}
+
+.national-section h2 {
+    max-width: 800px;
+    margin: auto auto 15px;
+    font-size: 45px;
+    line-height: 1.15;
+}
+
+.national-section p {
+    max-width: 700px;
+    margin: auto;
+    color: #d3dfeb;
+}
+
+.regions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.region {
+    border: 1px solid rgba(255,255,255,.18);
+    padding: 10px 18px;
+    border-radius: 30px;
+    color: #dbe5ef;
+    font-size: 13px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.process {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.process-number {
+    width: 40px;
+    height: 40px;
+    background: var(--orange);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.process h3 {
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.process p {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta-box {
+    background: linear-gradient(120deg, var(--orange), #e96f0f);
+    color: white;
+    border-radius: 22px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta-box h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    color: #fff0e5;
+}
+
+.cta-button {
+    background: var(--navy);
+    color: white;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    background: var(--light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.contact-info {
+    background: var(--navy);
+    color: white;
+    padding: 35px;
+    border-radius: 18px;
+}
+
+.contact-info h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.contact-info > p {
+    color: #cbd8e6;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: rgba(255,255,255,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-light);
+}
+
+.contact-item small {
+    display: block;
+    color: #9fb0c2;
+    font-size: 11px;
+}
+
+.contact-item strong {
+    font-size: 14px;
+}
+
+.contact-form {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+}
+
+.contact-form h2 {
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--orange);
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--navy-dark);
+    color: #b9c8d8;
+    padding: 55px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 35px;
+}
+
+footer h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+footer p,
+footer li {
+    font-size: 13px;
+}
+
+footer ul {
+    list-style: none;
+    display: grid;
+    gap: 9px;
+}
+
+footer a:hover {
+    color: var(--orange-light);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(3,14,27,.8);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 550px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-box img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.modal-content {
+    padding: 25px;
+}
+
+.modal-content h2 {
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.modal-content p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: var(--navy);
+    font-size: 23px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px) {
+
+    .equipment-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:800px) {
+
+    .topbar {
+        display: none;
+    }
+
+    .navbar {
+        height: 68px;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-info {
+        gap: 20px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .national-section h2 {
+        font-size: 35px;
+    }
+
+    .cta-box {
+        display: block;
+        padding: 32px 25px;
+    }
+
+    .cta-box h2 {
+        font-size: 32px;
+    }
+
+    .cta-button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:520px) {
+
+    section {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .equipment-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .equipment-image {
+        height: 130px;
+    }
+
+    .equipment-content {
+        padding: 13px;
+    }
+
+    .equipment-content h3 {
+        font-size: 15px;
+    }
+
+    .equipment-content p {
+        font-size: 11px;
+        min-height: 72px;
+    }
+
+    .equipment-button {
+        font-size: 11px;
+        padding: 9px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .national-section h2 {
+        font-size: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =====================================================
-         TOP BAR
-    ====================================================== -->
+<!-- =========================
+     TOP BAR
+========================= -->
 
-    <div class="topbar">
+<div class="topbar">
 
-        <div class="container topbar-content">
+    <div class="container topbar-content">
 
-            <div>
-                🌐 Layanan Rental Alat Berat Nasional
-            </div>
+        <span>
+            🇮🇩 Rental Alat Berat Nasional
+        </span>
 
-            <div>
-                📧 r2heavyequipment@gmail.com
-            </div>
-
-        </div>
+        <span>
+            ✉️ r2heavyequipment@gmail.com
+        </span>
 
     </div>
 
+</div>
 
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
-    <header>
+<header>
 
-        <div class="container navbar">
+<div class="container navbar">
 
+    <a href="#home" class="logo">
 
-            <!-- LOGO -->
+        <div class="logo-icon">
+            🚜
+        </div>
 
-            <a href="#home" class="logo">
+        <div class="logo-text">
 
-                <div class="logo-icon">
-                    🚜
-                </div>
+            <strong>
+                R2 HEAVY EQUIPMENT
+            </strong>
 
-                <div class="logo-text">
-
-                    <strong>
-                        R2 HEAVY EQUIPMENT
-                    </strong>
-
-                    <span>
-                        HEAVY EQUIPMENT RENTAL
-                    </span>
-
-                </div>
-
-            </a>
-
-
-
-            <!-- MENU -->
-
-            <nav class="nav-menu" id="navMenu">
-
-                <a href="#home">
-                    Beranda
-                </a>
-
-                <a href="#alat">
-                    Alat Berat
-                </a>
-
-                <a href="#tentang">
-                    Tentang
-                </a>
-
-                <a href="#layanan">
-                    Layanan
-                </a>
-
-                <a href="#kontak">
-                    Kontak
-                </a>
-
-            </nav>
-
-
-
-            <!-- CONTACT -->
-
-            <div class="nav-contact">
-
-                <div class="phone-info">
-
-                    <strong>
-                        0821-9072-4298
-                    </strong>
-
-                    <span>
-                        Hubungi Kami
-                    </span>
-
-                </div>
-
-                <a
-                    href="https://wa.me/6282190724298"
-                    target="_blank"
-                    class="btn btn-orange"
-                >
-                    WhatsApp
-                </a>
-
-            </div>
-
-
-            <!-- MOBILE BUTTON -->
-
-            <button
-                class="mobile-menu-btn"
-                id="mobileMenuBtn"
-            >
-                ☰
-            </button>
-
+            <span>
+                HEAVY EQUIPMENT RENTAL
+            </span>
 
         </div>
 
-    </header>
-
-
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section
-        class="hero"
-        id="home"
-    >
-
-        <div class="container">
-
-            <div class="hero-content">
-
-                <div class="hero-label">
-                    Rental Alat Berat Nasional
-                </div>
-
-
-                <h1>
-
-                    Solusi Tepat
-
-                    <span>
-                        Rental Alat Berat
-                    </span>
-
-                    Untuk Proyek Anda
-
-                </h1>
-
-
-                <p class="hero-description">
-
-                    R2 Heavy Equipment menyediakan solusi
-                    rental alat berat untuk berbagai kebutuhan
-                    proyek di seluruh Indonesia dengan pelayanan
-                    profesional dan proses pemesanan yang mudah.
-
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#alat"
-                        class="btn btn-orange"
-                    >
-                        🚜 Lihat Alat Berat
-                    </a>
-
-
-                    <a
-                        href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20menanyakan%20rental%20alat%20berat."
-                        target="_blank"
-                        class="btn btn-outline"
-                    >
-                        💬 Konsultasi via WhatsApp
-                    </a>
-
-                </div>
-
-
-                <div class="hero-info">
-
-                    <div class="hero-info-item">
-
-                        <strong>
-                            🇮🇩
-                        </strong>
-
-                        <span>
-                            Jangkauan Nasional
-                        </span>
-
-                    </div>
-
-
-                    <div class="hero-info-item">
-
-                        <strong>
-                            🚜
-                        </strong>
-
-                        <span>
-                            Berbagai Jenis Unit
-                        </span>
-
-                    </div>
-
-
-                    <div class="hero-info-item">
-
-                        <strong>
-                            24/7
-                        </strong>
-
-                        <span>
-                            Konsultasi Online
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         EQUIPMENT
-    ====================================================== -->
-
-    <section
-        class="equipment-section"
-        id="alat"
-    >
-
-        <div class="container">
-
-
-            <div class="section-heading">
-
-                <div>
-
-                    <div class="section-label">
-                        Pilihan Unit
-                    </div>
-
-                    <h2 class="section-title">
-                        Alat Berat Kami
-                    </h2>
-
-                </div>
-
-
-                <p class="section-description">
-
-                    Pilihan alat berat untuk mendukung
-                    berbagai kebutuhan proyek Anda.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- FILTER -->
-
-            <div class="filters">
-
-                <button
-                    class="filter-btn active"
-                    data-filter="all"
-                >
-                    Semua
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-filter="excavator"
-                >
-                    Excavator
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-filter="bulldozer"
-                >
-                    Bulldozer
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-filter="loader"
-                >
-                    Wheel Loader
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-filter="dump"
-                >
-                    Dump Truck
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-filter="grader"
-                >
-                    Motor Grader
-                </button>
-
-            </div>
-
-
-
-            <!-- EQUIPMENT GRID -->
-
-            <div class="equipment-grid">
-
-
-
-                <!-- EXCAVATOR -->
-
-                <article
-                    class="equipment-card"
-                    data-type="excavator"
-                >
-
-                    <div class="equipment-image">
-
-                        <span class="status">
-                            Unit Tersedia
-                        </span>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1579217309781-3f1d6c1a6a31?auto=format&fit=crop&w=900&q=80"
-                            alt="Excavator"
-                        >
-
-                    </div>
-
-
-                    <div class="equipment-content">
-
-                        <h3>
-                            Excavator
-                        </h3>
-
-                        <p>
-                            Excavator untuk pekerjaan
-                            konstruksi, penggalian,
-                            land clearing dan pekerjaan proyek.
-                        </p>
-
-                        <button
-                            class="equipment-button detail-btn"
-                            data-name="Excavator"
-                            data-image="https://images.unsplash.com/photo-1579217309781-3f1d6c1a6a31?auto=format&fit=crop&w=900&q=80"
-                        >
-                            Lihat Detail
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BULLDOZER -->
-
-                <article
-                    class="equipment-card"
-                    data-type="bulldozer"
-                >
-
-                    <div class="equipment-image">
-
-                        <span class="status">
-                            Unit Tersedia
-                        </span>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80"
-                            alt="Bulldozer"
-                        >
-
-                    </div>
-
-
-                    <div class="equipment-content">
-
-                        <h3>
-                            Bulldozer
-                        </h3>
-
-                        <p>
-                            Cocok untuk pekerjaan
-                            perataan tanah, land clearing,
-                            pemindahan material dan proyek.
-                        </p>
-
-                        <button
-                            class="equipment-button detail-btn"
-                            data-name="Bulldozer"
-                            data-image="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80"
-                        >
-                            Lihat Detail
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- WHEEL LOADER -->
-
-                <article
-                    class="equipment-card"
-                    data-type="loader"
-                >
-
-                    <div class="equipment-image">
-
-                        <span class="status">
-                            Unit Tersedia
-                        </span>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=900&q=80"
-                            alt="Wheel Loader"
-                        >
-
-                    </div>
-
-
-                    <div class="equipment-content">
-
-                        <h3>
-                            Wheel Loader
-                        </h3>
-
-                        <p>
-                            Untuk pemuatan dan pemindahan
-                            material pada berbagai kebutuhan
-                            proyek.
-                        </p>
-
-                        <button
-                            class="equipment-button detail-btn"
-                            data-name="Wheel Loader"
-                            data-image="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=900&q=80"
-                        >
-                            Lihat Detail
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- DUMP TRUCK -->
-
-                <article
-                    class="equipment-card"
-                    data-type="dump"
-                >
-
-                    <div class="equipment-image">
-
-                        <span class="status">
-                            Unit Tersedia
-                        </span>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=900&q=80"
-                            alt="Dump Truck"
-                        >
-
-                    </div>
-
-
-                    <div class="equipment-content">
-
-                        <h3>
-                            Dump Truck
-                        </h3>
-
-                        <p>
-                            Solusi transportasi material
-                            untuk kebutuhan konstruksi
-                            dan proyek skala besar.
-                        </p>
-
-                        <button
-                            class="equipment-button detail-btn"
-                            data-name="Dump Truck"
-                            data-image="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=900&q=80"
-                        >
-                            Lihat Detail
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- MOTOR GRADER -->
-
-                <article
-                    class="equipment-card"
-                    data-type="grader"
-                >
-
-                    <div class="equipment-image">
-
-                        <span class="status">
-                            Unit Tersedia
-                        </span>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
-                            alt="Motor Grader"
-                        >
-
-                    </div>
-
-
-                    <div class="equipment-content">
-
-                        <h3>
-                            Motor Grader
-                        </h3>
-
-                        <p>
-                            Untuk pekerjaan grading,
-                            perataan dan pembentukan
-                            permukaan jalan maupun area proyek.
-                        </p>
-
-                        <button
-                            class="equipment-button detail-btn"
-                            data-name="Motor Grader"
-                            data-image="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
-                        >
-                            Lihat Detail
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         TENTANG / POSITIONING
-    ====================================================== -->
-
-    <section id="tentang">
-
-        <div class="container about-grid">
-
-
-            <div class="about-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?auto=format&fit=crop&w=1100&q=85"
-                    alt="Alat berat R2 Heavy Equipment"
-                >
-
-            </div>
-
-
-
-            <div class="about-content">
-
-                <div class="section-label">
-                    Tentang R2 Heavy Equipment
-                </div>
-
-
-                <h2>
-                    Partner Rental Alat Berat
-                    Untuk Proyek Anda
-                </h2>
-
-
-                <p>
-
-                    R2 Heavy Equipment merupakan layanan
-                    rental alat berat berbasis online yang
-                    melayani kebutuhan proyek di seluruh
-                    Indonesia.
-
-                </p>
-
-
-                <div class="feature-list">
-
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            ✓
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Jangkauan Nasional
-                            </h3>
-
-                            <p>
-                                Melayani kebutuhan rental alat
-                                berat untuk proyek di berbagai
-                                wilayah Indonesia.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            🚜
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Beragam Pilihan Alat
-                            </h3>
-
-                            <p>
-                                Berbagai jenis alat berat untuk
-                                kebutuhan proyek yang berbeda.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            📱
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Pemesanan Online
-                            </h3>
-
-                            <p>
-                                Konsultasi dan permintaan rental
-                                dapat dilakukan dengan mudah
-                                secara online.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="feature">
-
-                        <div class="feature-icon">
-                            🤝
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Pelayanan Profesional
-                            </h3>
-
-                            <p>
-                                Kami membantu menyesuaikan
-                                kebutuhan alat dengan kebutuhan
-                                proyek Anda.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         LAYANAN
-    ====================================================== -->
-
-    <section
-        class="services-section"
-        id="layanan"
-    >
-
-        <div class="container">
-
-            <div class="section-label">
-                Layanan
-            </div>
-
-            <h2 class="section-title">
-                Solusi Untuk Berbagai Kebutuhan
-            </h2>
-
-            <p class="section-description">
-                R2 Heavy Equipment siap membantu kebutuhan
-                alat berat untuk berbagai jenis pekerjaan.
-            </p>
-
-
-
-            <div class="service-grid">
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🏗️
-                    </div>
-
-                    <h3>
-                        Proyek Konstruksi
-                    </h3>
-
-                    <p>
-                        Mendukung kebutuhan alat berat
-                        untuk pembangunan dan pekerjaan
-                        konstruksi.
-                    </p>
-
-                </div>
-
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🌳
-                    </div>
-
-                    <h3>
-                        Land Clearing
-                    </h3>
-
-                    <p>
-                        Pilihan unit untuk pekerjaan
-                        pembukaan dan pembersihan lahan.
-                    </p>
-
-                </div>
-
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🛣️
-                    </div>
-
-                    <h3>
-                        Pekerjaan Jalan
-                    </h3>
-
-                    <p>
-                        Mendukung pekerjaan perataan,
-                        pemadatan dan pembangunan jalan.
-                    </p>
-
-                </div>
-
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        ⛏️
-                    </div>
-
-                    <h3>
-                        Pekerjaan Tanah
-                    </h3>
-
-                    <p>
-                        Rental unit untuk penggalian,
-                        pemindahan dan pengolahan tanah.
-                    </p>
-
-                </div>
-
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🏭
-                    </div>
-
-                    <h3>
-                        Proyek Industri
-                    </h3>
-
-                    <p>
-                        Kebutuhan alat berat untuk
-                        pekerjaan proyek industri.
-                    </p>
-
-                </div>
-
-
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        🚧
-                    </div>
-
-                    <h3>
-                        Kebutuhan Proyek Lainnya
-                    </h3>
-
-                    <p>
-                        Konsultasikan kebutuhan alat berat
-                        proyek Anda kepada tim kami.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         NASIONAL
-    ====================================================== -->
-
-    <section class="national-section">
-
-        <div class="container">
-
-            <div class="section-label">
-                Jangkauan Layanan
-            </div>
-
-
-            <h2>
-                Melayani Kebutuhan
-                Alat Berat di Seluruh Indonesia
-            </h2>
-
-
-            <p>
-
-                Berbasis online dengan jangkauan nasional,
-                R2 Heavy Equipment siap membantu kebutuhan
-                rental alat berat untuk proyek Anda di
-                berbagai wilayah Indonesia.
-
-            </p>
-
-
-            <div class="regions">
-
-                <span class="region">
-                    Sumatera
-                </span>
-
-                <span class="region">
-                    Jawa
-                </span>
-
-                <span class="region">
-                    Kalimantan
-                </span>
-
-                <span class="region">
-                    Sulawesi
-                </span>
-
-                <span class="region">
-                    Bali & Nusa Tenggara
-                </span>
-
-                <span class="region">
-                    Maluku
-                </span>
-
-                <span class="region">
-                    Papua
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CARA PEMESANAN
-    ====================================================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-label">
-                Cara Pemesanan
-            </div>
-
-            <h2 class="section-title">
-                Mudah & Praktis
-            </h2>
-
-            <p class="section-description">
-                Konsultasikan kebutuhan alat berat Anda
-                secara langsung melalui WhatsApp.
-            </p>
-
-
-            <div class="process-grid">
-
-
-                <div class="process">
-
-                    <div class="process-number">
-                        1
-                    </div>
-
-                    <h3>
-                        Hubungi Kami
-                    </h3>
-
-                    <p>
-                        Kirim pesan melalui WhatsApp
-                        untuk menyampaikan kebutuhan
-                        proyek Anda.
-                    </p>
-
-                </div>
-
-
-
-                <div class="process">
-
-                    <div class="process-number">
-                        2
-                    </div>
-
-                    <h3>
-                        Konsultasi
-                    </h3>
-
-                    <p>
-                        Sampaikan jenis alat,
-                        lokasi proyek dan kebutuhan
-                        pekerjaan.
-                    </p>
-
-                </div>
-
-
-
-                <div class="process">
-
-                    <div class="process-number">
-                        3
-                    </div>
-
-                    <h3>
-                        Pilih Unit
-                    </h3>
-
-                    <p>
-                        Tim kami membantu menyesuaikan
-                        unit dengan kebutuhan proyek.
-                    </p>
-
-                </div>
-
-
-
-                <div class="process">
-
-                    <div class="process-number">
-                        4
-                    </div>
-
-                    <h3>
-                        Konfirmasi
-                    </h3>
-
-                    <p>
-                        Setelah kebutuhan disepakati,
-                        proses rental dapat dilanjutkan.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CTA
-    ====================================================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="cta-box">
-
-                <div>
-
-                    <div class="section-label"
-                         style="color:#ffe0c5">
-
-                        Butuh Alat Berat?
-
-                    </div>
-
-
-                    <h2>
-                        Konsultasikan Proyek Anda
-                    </h2>
-
-
-                    <p>
-                        Hubungi R2 Heavy Equipment
-                        untuk mendapatkan informasi
-                        mengenai kebutuhan rental alat berat Anda.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20konsultasi%20mengenai%20rental%20alat%20berat."
-                    target="_blank"
-                    class="btn cta-button"
-                >
-                    💬 Hubungi WhatsApp
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
-
-    <section
-        class="contact-section"
-        id="kontak"
-    >
-
-        <div class="container contact-grid">
-
-
-            <!-- CONTACT INFO -->
-
-            <div class="contact-info">
-
-                <h2>
-                    Hubungi R2 Heavy Equipment
-                </h2>
-
-
-                <p>
-                    Konsultasikan kebutuhan rental alat
-                    berat Anda melalui kontak resmi kami.
-                </p>
-
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        📱
-                    </div>
-
-                    <div>
-
-                        <small>
-                            WhatsApp
-                        </small>
-
-                        <strong>
-                            0821-9072-4298
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        ✉️
-                    </div>
-
-                    <div>
-
-                        <small>
-                            Email
-                        </small>
-
-                        <strong>
-                            r2heavyequipment@gmail.com
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-item">
-
-                    <div class="contact-icon">
-                        🇮🇩
-                    </div>
-
-                    <div>
-
-                        <small>
-                            Jangkauan
-                        </small>
-
-                        <strong>
-                            Seluruh Indonesia
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-
-                <a
-                    href="https://wa.me/6282190724298"
-                    target="_blank"
-                    class="btn btn-orange"
-                >
-                    💬 Chat WhatsApp
-                </a>
-
-            </div>
-
-
-
-            <!-- FORM -->
-
-            <div class="contact-form">
-
-                <h2>
-                    Konsultasi Rental
-                </h2>
-
-
-                <form id="rentalForm">
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Nama
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nama"
-                            placeholder="Nama Anda"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Nomor WhatsApp
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="telepon"
-                            placeholder="08xxxxxxxxxx"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Pilihan Alat
-                        </label>
-
-                        <select
-                            id="alatPilihan"
-                            required
-                        >
-
-                            <option value="">
-                                Pilih alat berat
-                            </option>
-
-                            <option>
-                                Excavator
-                            </option>
-
-                            <option>
-                                Bulldozer
-                            </option>
-
-                            <option>
-                                Wheel Loader
-                            </option>
-
-                            <option>
-                                Dump Truck
-                            </option>
-
-                            <option>
-                                Motor Grader
-                            </option>
-
-                            <option>
-                                Alat lainnya
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Lokasi Proyek
-                        </label>
-
-                        <input
-                            type="text"
-                            id="lokasi"
-                            placeholder="Kota / Kabupaten / Provinsi"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label>
-                            Kebutuhan / Pesan
-                        </label>
-
-                        <textarea
-                            id="pesan"
-                            placeholder="Jelaskan kebutuhan alat berat Anda..."
-                        ></textarea>
-
-                    </div>
-
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-orange"
-                    >
-                        Kirim via WhatsApp
-                    </button>
-
-
-                </form>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <div class="container footer-grid">
-
-
-            <div>
-
-                <div class="logo">
-
-                    <div class="logo-icon">
-                        🚜
-                    </div>
-
-                    <div class="logo-text">
-
-                        <strong style="color:white">
-                            R2 HEAVY EQUIPMENT
-                        </strong>
-
-                        <span>
-                            HEAVY EQUIPMENT RENTAL
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <p style="margin-top:18px">
-
-                    Rental alat berat berbasis online
-                    dengan jangkauan layanan nasional
-                    untuk kebutuhan proyek di seluruh Indonesia.
-
-                </p>
-
-            </div>
-
-
-
-            <div>
-
-                <h3>
-                    Navigasi
-                </h3>
-
-                <ul>
-
-                    <li>
-                        <a href="#home">
-                            Beranda
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#alat">
-                            Alat Berat
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#tentang">
-                            Tentang
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#layanan">
-                            Layanan
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#kontak">
-                            Kontak
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div>
-
-                <h3>
-                    Alat Berat
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Excavator
-                    </li>
-
-                    <li>
-                        Bulldozer
-                    </li>
-
-                    <li>
-                        Wheel Loader
-                    </li>
-
-                    <li>
-                        Dump Truck
-                    </li>
-
-                    <li>
-                        Motor Grader
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div>
-
-                <h3>
-                    Kontak
-                </h3>
-
-                <ul>
-
-                    <li>
-                        0821-9072-4298
-                    </li>
-
-                    <li>
-                        r2heavyequipment@gmail.com
-                    </li>
-
-                    <li>
-                        Online
-                    </li>
-
-                    <li>
-                        Seluruh Indonesia
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="container copyright">
-
-            © 2026 R2 Heavy Equipment.
-            All Rights Reserved.
-
-        </div>
-
-    </footer>
-
-
-
-    <!-- =====================================================
-         WHATSAPP FLOATING
-    ====================================================== -->
-
-    <a
-        href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20menanyakan%20rental%20alat%20berat."
-        target="_blank"
-        class="whatsapp-float"
-        aria-label="WhatsApp"
-    >
-        ☎
     </a>
 
 
+    <nav class="nav-menu" id="navMenu">
 
-    <!-- =====================================================
-         MODAL DETAIL ALAT
-    ====================================================== -->
+        <a href="#home">Beranda</a>
+        <a href="#alat">Alat Berat</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#kontak">Kontak</a>
 
-    <div
-        class="modal"
-        id="equipmentModal"
+    </nav>
+
+
+    <div class="nav-contact">
+
+        <div class="phone-info">
+
+            <strong>
+                0821-9072-4298
+            </strong>
+
+            <span>
+                Hubungi Kami
+            </span>
+
+        </div>
+
+        <a
+            href="https://wa.me/6282190724298"
+            target="_blank"
+            class="btn btn-orange"
+        >
+            WhatsApp
+        </a>
+
+    </div>
+
+
+    <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
     >
+        ☰
+    </button>
 
-        <div class="modal-box">
+</div>
 
-            <button
-                class="modal-close"
-                id="modalClose"
-            >
-                ×
-            </button>
+</header>
 
 
-            <img
-                id="modalImage"
-                src=""
-                alt="Detail alat"
-            >
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+    <div class="hero-label">
+        Rental Alat Berat Nasional
+    </div>
+
+    <h1>
+        Solusi Rental
+        <span>Alat Berat</span>
+        Untuk Proyek Anda
+    </h1>
+
+    <p class="hero-description">
+
+        R2 Heavy Equipment menyediakan layanan
+        rental alat berat berbasis online untuk
+        kebutuhan proyek di seluruh Indonesia.
+
+    </p>
 
 
-            <div class="modal-content">
+    <div class="hero-buttons">
 
-                <div class="section-label">
-                    Detail Unit
-                </div>
+        <a
+            href="#alat"
+            class="btn btn-orange"
+        >
+            🚜 Lihat Alat Berat
+        </a>
 
+        <a
+            href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20konsultasi%20rental%20alat%20berat."
+            target="_blank"
+            class="btn btn-outline"
+        >
+            💬 Konsultasi WhatsApp
+        </a>
 
-                <h2 id="modalTitle">
-                    Alat Berat
-                </h2>
-
-
-                <p>
-
-                    Silakan hubungi R2 Heavy Equipment
-                    untuk informasi ketersediaan unit,
-                    spesifikasi, lokasi proyek, dan
-                    kebutuhan rental Anda.
-
-                </p>
+    </div>
 
 
-                <a
-                    id="modalWhatsapp"
-                    href="#"
-                    target="_blank"
-                    class="btn btn-orange"
-                >
-                    💬 Tanya Unit via WhatsApp
-                </a>
+    <div class="hero-info">
 
-            </div>
+        <div class="hero-info-item">
+
+            <strong>🇮🇩</strong>
+
+            <span>
+                Jangkauan Nasional
+            </span>
+
+        </div>
+
+        <div class="hero-info-item">
+
+            <strong>🚜</strong>
+
+            <span>
+                Beragam Unit
+            </span>
+
+        </div>
+
+        <div class="hero-info-item">
+
+            <strong>📱</strong>
+
+            <span>
+                Pemesanan Online
+            </span>
 
         </div>
 
     </div>
 
+</div>
 
+</div>
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+</section>
 
-    <script>
 
+<!-- =========================
+     EQUIPMENT
+========================= -->
 
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
+<section
+    class="equipment-section"
+    id="alat"
+>
 
-        const mobileButton =
-            document.getElementById("mobileMenuBtn");
+<div class="container">
 
-        const navMenu =
-            document.getElementById("navMenu");
+<div class="section-heading">
 
+    <div>
 
-        mobileButton.addEventListener(
-            "click",
-            function () {
+        <div class="section-label">
+            Pilihan Unit
+        </div>
 
-                navMenu.classList.toggle("active");
+        <h2 class="section-title">
+            Alat Berat R2
+        </h2>
 
-                if (
-                    navMenu.classList.contains("active")
-                ) {
+    </div>
 
-                    mobileButton.innerHTML = "×";
+    <p class="section-description">
+        Pilihan unit umum untuk kebutuhan
+        pertambangan, konstruksi, hauling,
+        lifting dan pekerjaan pendukung.
+    </p>
 
-                } else {
+</div>
 
-                    mobileButton.innerHTML = "☰";
 
-                }
+<!-- FILTER -->
 
-            }
-        );
+<div class="filters">
 
+    <button
+        class="filter-btn active"
+        data-filter="all"
+    >
+        Semua
+    </button>
 
-        /* Tutup menu setelah klik */
+    <button
+        class="filter-btn"
+        data-filter="earthmoving"
+    >
+        🚜 Earthmoving
+    </button>
 
-        document
-            .querySelectorAll(".nav-menu a")
-            .forEach(function(link) {
+    <button
+        class="filter-btn"
+        data-filter="hauling"
+    >
+        🚛 Hauling
+    </button>
 
-                link.addEventListener(
-                    "click",
-                    function() {
+    <button
+        class="filter-btn"
+        data-filter="lifting"
+    >
+        🏗️ Lifting
+    </button>
 
-                        navMenu.classList.remove("active");
+    <button
+        class="filter-btn"
+        data-filter="support"
+    >
+        🔧 Support
+    </button>
 
-                        mobileButton.innerHTML = "☰";
+</div>
 
-                    }
-                );
 
-            });
+<div class="equipment-grid">
 
 
+<!-- 1 EXCAVATOR -->
 
-        /* =====================================================
-           FILTER ALAT BERAT
-        ===================================================== */
+<article
+class="equipment-card"
+data-type="earthmoving"
+>
 
-        const filterButtons =
-            document.querySelectorAll(".filter-btn");
+<div class="equipment-image">
 
-        const equipmentCards =
-            document.querySelectorAll(".equipment-card");
+<span class="status">
+Unit
+</span>
 
+<img
+src="https://images.unsplash.com/photo-1579217309781-3f1d6c1a6a31?auto=format&fit=crop&w=900&q=80"
+alt="Excavator"
+>
 
-        filterButtons.forEach(
-            function(button) {
+</div>
 
-                button.addEventListener(
-                    "click",
-                    function() {
+<div class="equipment-content">
 
-                        filterButtons.forEach(
-                            function(btn) {
+<div class="category-name">
+Earthmoving
+</div>
 
-                                btn.classList.remove(
-                                    "active"
-                                );
+<h3>Excavator</h3>
 
-                            }
-                        );
+<p>
+Untuk penggalian, loading,
+land clearing dan pekerjaan
+konstruksi.
+</p>
 
+<button
+class="equipment-button detail-btn"
+data-name="Excavator"
+data-image="https://images.unsplash.com/photo-1579217309781-3f1d6c1a6a31?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
 
-                        button.classList.add("active");
+</div>
 
+</article>
 
-                        const filter =
-                            button.dataset.filter;
 
+<!-- 2 BULLDOZER -->
 
-                        equipmentCards.forEach(
-                            function(card) {
+<article
+class="equipment-card"
+data-type="earthmoving"
+>
 
-                                if (
-                                    filter === "all" ||
-                                    card.dataset.type === filter
-                                ) {
+<div class="equipment-image">
 
-                                    card.style.display =
-                                        "block";
+<span class="status">Unit</span>
 
-                                } else {
+<img
+src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80"
+alt="Bulldozer"
+>
 
-                                    card.style.display =
-                                        "none";
+</div>
 
-                                }
+<div class="equipment-content">
 
-                            }
-                        );
+<div class="category-name">
+Earthmoving
+</div>
 
-                    }
-                );
+<h3>Bulldozer</h3>
 
-            }
-        );
+<p>
+Untuk dozing, land clearing,
+perataan dan pekerjaan tanah.
+</p>
 
+<button
+class="equipment-button detail-btn"
+data-name="Bulldozer"
+data-image="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
 
+</div>
 
-        /* =====================================================
-           MODAL DETAIL ALAT
-        ===================================================== */
+</article>
 
-        const modal =
-            document.getElementById("equipmentModal");
 
-        const modalImage =
-            document.getElementById("modalImage");
+<!-- 3 WHEEL LOADER -->
 
-        const modalTitle =
-            document.getElementById("modalTitle");
+<article
+class="equipment-card"
+data-type="earthmoving"
+>
 
-        const modalClose =
-            document.getElementById("modalClose");
+<div class="equipment-image">
 
-        const modalWhatsapp =
-            document.getElementById("modalWhatsapp");
+<span class="status">Unit</span>
 
+<img
+src="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=900&q=80"
+alt="Wheel Loader"
+>
 
-        document
-            .querySelectorAll(".detail-btn")
-            .forEach(
-                function(button) {
+</div>
 
-                    button.addEventListener(
-                        "click",
-                        function() {
+<div class="equipment-content">
 
-                            const name =
-                                button.dataset.name;
+<div class="category-name">
+Earthmoving
+</div>
 
-                            const image =
-                                button.dataset.image;
+<h3>Wheel Loader</h3>
 
+<p>
+Untuk loading dan pemindahan
+material dalam proyek.
+</p>
 
-                            modalImage.src =
-                                image;
+<button
+class="equipment-button detail-btn"
+data-name="Wheel Loader"
+data-image="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
 
-                            modalTitle.textContent =
-                                name;
+</div>
 
+</article>
 
-                            modalWhatsapp.href =
-                                "https://wa.me/6282190724298?text=" +
-                                encodeURIComponent(
-                                    "Halo R2 Heavy Equipment, saya tertarik dengan unit " +
-                                    name +
-                                    ". Mohon informasi lebih lanjut."
-                                );
 
+<!-- 4 BACKHOE -->
 
-                            modal.classList.add(
-                                "active"
-                            );
+<article
+class="equipment-card"
+data-type="earthmoving"
+>
 
-                        }
-                    );
+<div class="equipment-image">
 
-                }
-            );
+<span class="status">Unit</span>
 
+<img
+src="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
+alt="Backhoe Loader"
+>
 
-        modalClose.addEventListener(
-            "click",
-            function() {
+</div>
 
-                modal.classList.remove(
-                    "active"
-                );
+<div class="equipment-content">
 
-            }
-        );
+<div class="category-name">
+Earthmoving
+</div>
 
+<h3>Backhoe Loader</h3>
 
-        modal.addEventListener(
-            "click",
-            function(event) {
+<p>
+Unit serbaguna untuk
+penggalian dan pekerjaan
+pendukung proyek.
+</p>
 
-                if (
-                    event.target === modal
-                ) {
+<button
+class="equipment-button detail-btn"
+data-name="Backhoe Loader"
+data-image="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
 
-                    modal.classList.remove(
-                        "active"
-                    );
+</div>
 
-                }
+</article>
 
-            }
-        );
 
+<!-- 5 MOTOR GRADER -->
 
+<article
+class="equipment-card"
+data-type="earthmoving"
+>
 
-        /* =====================================================
-           FORM -> WHATSAPP
-        ===================================================== */
+<div class="equipment-image">
 
-        const rentalForm =
-            document.getElementById("rentalForm");
+<span class="status">Unit</span>
 
+<img
+src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+alt="Motor Grader"
+>
 
-        rentalForm.addEventListener(
-            "submit",
-            function(event) {
+</div>
 
-                event.preventDefault();
+<div class="equipment-content">
 
+<div class="category-name">
+Earthmoving
+</div>
 
-                const nama =
-                    document.getElementById("nama").value;
+<h3>Motor Grader</h3>
 
-                const telepon =
-                    document.getElementById("telepon").value;
+<p>
+Untuk grading, perataan
+dan pembentukan permukaan jalan.
+</p>
 
-                const alat =
-                    document.getElementById("alatPilihan").value;
+<button
+class="equipment-button detail-btn"
+data-name="Motor Grader"
+data-image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
 
-                const lokasi =
-                    document.getElementById("lokasi").value;
+</div>
 
-                const pesan =
-                    document.getElementById("pesan").value;
+</article>
 
 
-                const text =
+<!-- 6 VIBRO -->
 
-                    "Halo R2 Heavy Equipment,%0A%0A" +
+<article
+class="equipment-card"
+data-type="earthmoving"
+>
 
-                    "Saya ingin melakukan konsultasi rental alat berat.%0A%0A" +
+<div class="equipment-image">
 
-                    "Nama: " +
-                    nama +
-                    "%0A" +
+<span class="status">Unit</span>
 
-                    "No. WhatsApp: " +
-                    telepon +
-                    "%0A" +
+<img
+src="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
+alt="Vibro Roller"
+>
 
-                    "Alat: " +
-                    alat +
-                    "%0A" +
+</div>
 
-                    "Lokasi Proyek: " +
-                    lokasi +
-                    "%0A" +
+<div class="equipment-content">
 
-                    "Kebutuhan: " +
-                    pesan;
+<div class="category-name">
+Earthmoving
+</div>
 
+<h3>Vibro Roller</h3>
 
-                window.open(
-                    "https://wa.me/6282190724298?text=" +
-                    text,
-                    "_blank"
-                );
+<p>
+Untuk pemadatan tanah,
+jalan dan area proyek.
+</p>
 
-            }
-        );
+<button
+class="equipment-button detail-btn"
+data-name="Vibro Roller"
+data-image="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
 
+</div>
 
+</article>
 
-        /* =====================================================
-           CLOSE MODAL ESC
-        ===================================================== */
 
-        document.addEventListener(
-            "keydown",
-            function(event) {
+<!-- 7 DUMP TRUCK -->
 
-                if (
-                    event.key === "Escape"
-                ) {
+<article
+class="equipment-card"
+data-type="hauling"
+>
 
-                    modal.classList.remove(
-                        "active"
-                    );
+<div class="equipment-image">
 
-                }
+<span class="status">Unit</span>
 
-            }
-        );
+<img
+src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=900&q=80"
+alt="Dump Truck"
+>
 
-    </script>
+</div>
 
+<div class="equipment-content">
+
+<div class="category-name">
+Hauling
+</div>
+
+<h3>Dump Truck</h3>
+
+<p>
+Untuk pengangkutan material
+tanah, batu dan material proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Dump Truck"
+data-image="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 8 TRONTON -->
+
+<article
+class="equipment-card"
+data-type="hauling"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80"
+alt="Tronton"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Hauling
+</div>
+
+<h3>Tronton</h3>
+
+<p>
+Transportasi material dan
+kebutuhan logistik proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Tronton"
+data-image="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 9 LOWBED -->
+
+<article
+class="equipment-card"
+data-type="hauling"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=900&q=80"
+alt="Trailer Lowbed"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Hauling
+</div>
+
+<h3>Trailer / Lowbed</h3>
+
+<p>
+Untuk mobilisasi alat berat
+dan unit proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Trailer / Lowbed"
+data-image="https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 10 MOBILE CRANE -->
+
+<article
+class="equipment-card"
+data-type="lifting"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=80"
+alt="Mobile Crane"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Lifting
+</div>
+
+<h3>Mobile Crane</h3>
+
+<p>
+Untuk pekerjaan pengangkatan
+material dan equipment.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Mobile Crane"
+data-image="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 11 CRANE TRUCK -->
+
+<article
+class="equipment-card"
+data-type="lifting"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=900&q=80"
+alt="Crane Truck"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Lifting
+</div>
+
+<h3>Crane Truck</h3>
+
+<p>
+Kombinasi kendaraan angkut
+dan alat pengangkat.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Crane Truck"
+data-image="https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 12 FORKLIFT -->
+
+<article
+class="equipment-card"
+data-type="lifting"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
+alt="Forklift"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Lifting
+</div>
+
+<h3>Forklift</h3>
+
+<p>
+Untuk material handling
+di gudang, workshop dan proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Forklift"
+data-image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 13 TELEHANDLER -->
+
+<article
+class="equipment-card"
+data-type="lifting"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80"
+alt="Telehandler"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Lifting
+</div>
+
+<h3>Telehandler</h3>
+
+<p>
+Untuk mengangkat dan memindahkan
+material di area proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Telehandler"
+data-image="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 14 WATER TRUCK -->
+
+<article
+class="equipment-card"
+data-type="support"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+alt="Water Truck"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Support
+</div>
+
+<h3>Water Truck</h3>
+
+<p>
+Untuk penyiraman jalan,
+dust suppression dan kebutuhan air.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Water Truck"
+data-image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 15 FUEL TRUCK -->
+
+<article
+class="equipment-card"
+data-type="support"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80"
+alt="Fuel Truck"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Support
+</div>
+
+<h3>Fuel Truck</h3>
+
+<p>
+Untuk distribusi bahan bakar
+ke area operasional proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Fuel Truck"
+data-image="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 16 SERVICE TRUCK -->
+
+<article
+class="equipment-card"
+data-type="support"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+alt="Service Truck"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Support
+</div>
+
+<h3>Service Truck</h3>
+
+<p>
+Mendukung pekerjaan maintenance
+dan service unit di lapangan.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Service Truck"
+data-image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 17 GENSET -->
+
+<article
+class="equipment-card"
+data-type="support"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80"
+alt="Genset"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Support
+</div>
+
+<h3>Generator Set</h3>
+
+<p>
+Sumber listrik untuk kebutuhan
+operasional proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Generator Set"
+data-image="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 18 LIGHTING TOWER -->
+
+<article
+class="equipment-card"
+data-type="support"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?auto=format&fit=crop&w=900&q=80"
+alt="Lighting Tower"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Support
+</div>
+
+<h3>Lighting Tower</h3>
+
+<p>
+Penerangan untuk pekerjaan
+proyek pada malam hari.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Lighting Tower"
+data-image="https://images.unsplash.com/photo-1516939884455-1445c8652f83?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 19 DEWATERING PUMP -->
+
+<article
+class="equipment-card"
+data-type="support"
+>
+
+<div class="equipment-image">
+
+<span class="status">Unit</span>
+
+<img
+src="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
+alt="Dewatering Pump"
+>
+
+</div>
+
+<div class="equipment-content">
+
+<div class="category-name">
+Support
+</div>
+
+<h3>Dewatering Pump</h3>
+
+<p>
+Untuk membantu pengelolaan
+dan pemindahan air di area proyek.
+</p>
+
+<button
+class="equipment-button detail-btn"
+data-name="Dewatering Pump"
+data-image="https://images.unsplash.com/photo-1580901369227-308f6f40caca?auto=format&fit=crop&w=900&q=80"
+>
+Tanya Unit
+</button>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TENTANG
+========================= -->
+
+<section id="tentang">
+
+<div class="container about-grid">
+
+<div class="about-image">
+
+<img
+src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?auto=format&fit=crop&w=1100&q=85"
+alt="R2 Heavy Equipment"
+>
+
+</div>
+
+
+<div class="about-content">
+
+<div class="section-label">
+Tentang R2 Heavy Equipment
+</div>
+
+<h2>
+Partner Rental Alat Berat
+Untuk Proyek Anda
+</h2>
+
+<p>
+R2 Heavy Equipment merupakan layanan
+rental alat berat berbasis online dengan
+jangkauan nasional untuk kebutuhan proyek
+di seluruh Indonesia.
+</p>
+
+
+<div class="feature-list">
+
+<div class="feature">
+
+<div class="feature-icon">✓</div>
+
+<div>
+
+<h3>Jangkauan Nasional</h3>
+
+<p>
+Melayani kebutuhan rental alat berat
+untuk berbagai wilayah Indonesia.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🚜</div>
+
+<div>
+
+<h3>Beragam Pilihan Unit</h3>
+
+<p>
+Tersedia berbagai kategori unit
+untuk kebutuhan proyek.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">📱</div>
+
+<div>
+
+<h3>Pemesanan Online</h3>
+
+<p>
+Konsultasi dan permintaan rental
+dilakukan secara online.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🤝</div>
+
+<div>
+
+<h3>Pelayanan Profesional</h3>
+
+<p>
+Membantu menyesuaikan unit dengan
+kebutuhan pekerjaan Anda.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LAYANAN
+========================= -->
+
+<section
+class="services-section"
+id="layanan"
+>
+
+<div class="container">
+
+<div class="section-label">
+Layanan
+</div>
+
+<h2 class="section-title">
+Solusi Untuk Berbagai Kebutuhan
+</h2>
+
+<p class="section-description">
+R2 Heavy Equipment melayani kebutuhan
+unit untuk berbagai pekerjaan proyek.
+</p>
+
+
+<div class="service-grid">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+⛏️
+</div>
+
+<h3>
+Pertambangan
+</h3>
+
+<p>
+Kebutuhan alat berat untuk aktivitas
+operasional pertambangan dan area kerja.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🏗️
+</div>
+
+<h3>
+Konstruksi
+</h3>
+
+<p>
+Mendukung pembangunan gedung,
+jalan dan berbagai proyek konstruksi.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🚛
+</div>
+
+<h3>
+Hauling
+</h3>
+
+<p>
+Unit angkut dan mobilisasi untuk
+kebutuhan material maupun alat berat.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🏗️
+</div>
+
+<h3>
+Lifting
+</h3>
+
+<p>
+Kebutuhan alat angkat untuk
+material dan equipment proyek.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🌳
+</div>
+
+<h3>
+Land Clearing
+</h3>
+
+<p>
+Unit untuk pekerjaan pembukaan
+dan pembersihan lahan.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🛣️
+</div>
+
+<h3>
+Pekerjaan Jalan
+</h3>
+
+<p>
+Mendukung pekerjaan grading,
+pemadatan dan pembangunan jalan.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NASIONAL
+========================= -->
+
+<section class="national-section">
+
+<div class="container">
+
+<div class="section-label">
+Jangkauan Layanan
+</div>
+
+<h2>
+Melayani Kebutuhan Alat Berat
+di Seluruh Indonesia
+</h2>
+
+<p>
+R2 Heavy Equipment berbasis online
+dengan jangkauan nasional untuk membantu
+kebutuhan rental alat berat proyek Anda.
+</p>
+
+
+<div class="regions">
+
+<span class="region">Sumatera</span>
+<span class="region">Jawa</span>
+<span class="region">Kalimantan</span>
+<span class="region">Sulawesi</span>
+<span class="region">Bali & Nusa Tenggara</span>
+<span class="region">Maluku</span>
+<span class="region">Papua</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROSES
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+Cara Pemesanan
+</div>
+
+<h2 class="section-title">
+Mudah & Praktis
+</h2>
+
+<p class="section-description">
+Konsultasikan kebutuhan alat berat Anda
+langsung melalui WhatsApp.
+</p>
+
+
+<div class="process-grid">
+
+
+<div class="process">
+
+<div class="process-number">1</div>
+
+<h3>
+Hubungi Kami
+</h3>
+
+<p>
+Kirim pesan melalui WhatsApp
+dan sampaikan kebutuhan proyek.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">2</div>
+
+<h3>
+Konsultasi
+</h3>
+
+<p>
+Sampaikan jenis alat, lokasi
+dan kebutuhan pekerjaan.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">3</div>
+
+<h3>
+Pilih Unit
+</h3>
+
+<p>
+Tim membantu menyesuaikan unit
+dengan kebutuhan proyek.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">4</div>
+
+<h3>
+Konfirmasi
+</h3>
+
+<p>
+Setelah kebutuhan disepakati,
+proses rental dapat dilanjutkan.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="cta-box">
+
+<div>
+
+<div
+class="section-label"
+style="color:#ffe0c5"
+>
+Butuh Alat Berat?
+</div>
+
+<h2>
+Konsultasikan Proyek Anda
+</h2>
+
+<p>
+Hubungi R2 Heavy Equipment untuk
+informasi kebutuhan rental alat berat.
+</p>
+
+</div>
+
+
+<a
+href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20konsultasi%20rental%20alat%20berat."
+target="_blank"
+class="btn cta-button"
+>
+💬 Hubungi WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="contact-section"
+id="kontak"
+>
+
+<div class="container contact-grid">
+
+
+<div class="contact-info">
+
+<h2>
+Hubungi R2 Heavy Equipment
+</h2>
+
+<p>
+Konsultasikan kebutuhan rental alat
+berat Anda melalui kontak resmi kami.
+</p>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+📱
+</div>
+
+<div>
+
+<small>WhatsApp</small>
+
+<strong>
+0821-9072-4298
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+✉️
+</div>
+
+<div>
+
+<small>Email</small>
+
+<strong>
+r2heavyequipment@gmail.com
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+🇮🇩
+</div>
+
+<div>
+
+<small>Jangkauan</small>
+
+<strong>
+Seluruh Indonesia
+</strong>
+
+</div>
+
+</div>
+
+
+<a
+href="https://wa.me/6282190724298"
+target="_blank"
+class="btn btn-orange"
+>
+💬 Chat WhatsApp
+</a>
+
+</div>
+
+
+<!-- FORM -->
+
+<div class="contact-form">
+
+<h2>
+Konsultasi Rental
+</h2>
+
+
+<form id="rentalForm">
+
+
+<div class="form-group">
+
+<label>Nama</label>
+
+<input
+type="text"
+id="nama"
+placeholder="Nama Anda"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Nomor WhatsApp</label>
+
+<input
+type="tel"
+id="telepon"
+placeholder="08xxxxxxxxxx"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Jenis Alat</label>
+
+<select id="alatPilihan" required>
+
+<option value="">
+Pilih alat berat
+</option>
+
+<option>Excavator</option>
+<option>Bulldozer</option>
+<option>Wheel Loader</option>
+<option>Backhoe Loader</option>
+<option>Motor Grader</option>
+<option>Vibro Roller</option>
+<option>Dump Truck</option>
+<option>Tronton</option>
+<option>Trailer / Lowbed</option>
+<option>Mobile Crane</option>
+<option>Crane Truck</option>
+<option>Forklift</option>
+<option>Telehandler</option>
+<option>Water Truck</option>
+<option>Fuel Truck</option>
+<option>Service Truck</option>
+<option>Generator Set</option>
+<option>Lighting Tower</option>
+<option>Dewatering Pump</option>
+<option>Alat Lainnya</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Lokasi Proyek
+</label>
+
+<input
+type="text"
+id="lokasi"
+placeholder="Kota / Kabupaten / Provinsi"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Kebutuhan / Pesan
+</label>
+
+<textarea
+id="pesan"
+placeholder="Jelaskan kebutuhan alat berat Anda..."
+></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="btn btn-orange"
+>
+Kirim via WhatsApp
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-grid">
+
+
+<div>
+
+<div class="logo">
+
+<div class="logo-icon">
+🚜
+</div>
+
+<div class="logo-text">
+
+<strong style="color:white">
+R2 HEAVY EQUIPMENT
+</strong>
+
+<span>
+HEAVY EQUIPMENT RENTAL
+</span>
+
+</div>
+
+</div>
+
+
+<p style="margin-top:18px">
+
+Rental alat berat berbasis online
+dengan jangkauan layanan nasional
+untuk kebutuhan proyek di Indonesia.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Navigasi
+</h3>
+
+<ul>
+
+<li><a href="#home">Beranda</a></li>
+<li><a href="#alat">Alat Berat</a></li>
+<li><a href="#tentang">Tentang</a></li>
+<li><a href="#layanan">Layanan</a></li>
+<li><a href="#kontak">Kontak</a></li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>
+Kategori
+</h3>
+
+<ul>
+
+<li>Earthmoving</li>
+<li>Hauling</li>
+<li>Lifting</li>
+<li>Support Equipment</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>
+Kontak
+</h3>
+
+<ul>
+
+<li>0821-9072-4298</li>
+
+<li>
+r2heavyequipment@gmail.com
+</li>
+
+<li>Berbasis Online</li>
+
+<li>Seluruh Indonesia</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="container copyright">
+
+© 2026 R2 Heavy Equipment.
+All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP FLOATING
+========================= -->
+
+<a
+href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20menanyakan%20rental%20alat%20berat."
+target="_blank"
+class="whatsapp-float"
+aria-label="WhatsApp"
+>
+☎
+</a>
+
+
+<!-- =========================
+     MODAL DETAIL
+========================= -->
+
+<div
+class="modal"
+id="equipmentModal"
+>
+
+<div class="modal-box">
+
+<button
+class="modal-close"
+id="modalClose"
+>
+×
+</button>
+
+
+<img
+id="modalImage"
+src=""
+alt="Detail alat berat"
+>
+
+
+<div class="modal-content">
+
+<div class="section-label">
+Detail Unit
+</div>
+
+<h2 id="modalTitle">
+Alat Berat
+</h2>
+
+<p>
+Silakan hubungi R2 Heavy Equipment
+untuk informasi ketersediaan unit,
+spesifikasi, lokasi proyek dan kebutuhan
+rental Anda.
+</p>
+
+<a
+id="modalWhatsapp"
+href="#"
+target="_blank"
+class="btn btn-orange"
+>
+💬 Tanya Unit via WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const mobileButton =
+document.getElementById("mobileMenuBtn");
+
+const navMenu =
+document.getElementById("navMenu");
+
+mobileButton.addEventListener(
+"click",
+function() {
+
+navMenu.classList.toggle("active");
+
+mobileButton.innerHTML =
+navMenu.classList.contains("active")
+? "×"
+: "☰";
+
+});
+
+document
+.querySelectorAll(".nav-menu a")
+.forEach(function(link) {
+
+link.addEventListener(
+"click",
+function() {
+
+navMenu.classList.remove("active");
+mobileButton.innerHTML = "☰";
+
+});
+
+});
+
+
+/* =========================
+   FILTER
+========================= */
+
+const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+const equipmentCards =
+document.querySelectorAll(".equipment-card");
+
+filterButtons.forEach(
+function(button) {
+
+button.addEventListener(
+"click",
+function() {
+
+filterButtons.forEach(
+function(btn) {
+btn.classList.remove("active");
+}
+);
+
+button.classList.add("active");
+
+const filter =
+button.dataset.filter;
+
+equipmentCards.forEach(
+function(card) {
+
+if (
+filter === "all" ||
+card.dataset.type === filter
+) {
+
+card.style.display = "block";
+
+} else {
+
+card.style.display = "none";
+
+}
+
+});
+
+});
+
+});
+
+
+/* =========================
+   MODAL
+========================= */
+
+const modal =
+document.getElementById("equipmentModal");
+
+const modalImage =
+document.getElementById("modalImage");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+const modalClose =
+document.getElementById("modalClose");
+
+const modalWhatsapp =
+document.getElementById("modalWhatsapp");
+
+
+document
+.querySelectorAll(".detail-btn")
+.forEach(
+function(button) {
+
+button.addEventListener(
+"click",
+function() {
+
+const name =
+button.dataset.name;
+
+const image =
+button.dataset.image;
+
+modalImage.src = image;
+
+modalTitle.textContent = name;
+
+modalWhatsapp.href =
+"https://wa.me/6282190724298?text=" +
+encodeURIComponent(
+"Halo R2 Heavy Equipment, saya tertarik dengan unit " +
+name +
+". Mohon informasi lebih lanjut."
+);
+
+modal.classList.add("active");
+
+});
+
+});
+
+
+modalClose.addEventListener(
+"click",
+function() {
+
+modal.classList.remove("active");
+
+});
+
+
+modal.addEventListener(
+"click",
+function(event) {
+
+if (event.target === modal) {
+
+modal.classList.remove("active");
+
+}
+
+});
+
+
+document.addEventListener(
+"keydown",
+function(event) {
+
+if (event.key === "Escape") {
+
+modal.classList.remove("active");
+
+}
+
+});
+
+
+/* =========================
+   FORM WHATSAPP
+========================= */
+
+const rentalForm =
+document.getElementById("rentalForm");
+
+rentalForm.addEventListener(
+"submit",
+function(event) {
+
+event.preventDefault();
+
+const nama =
+document.getElementById("nama").value;
+
+const telepon =
+document.getElementById("telepon").value;
+
+const alat =
+document.getElementById("alatPilihan").value;
+
+const lokasi =
+document.getElementById("lokasi").value;
+
+const pesan =
+document.getElementById("pesan").value;
+
+
+const text =
+`Halo R2 Heavy Equipment,
+
+Saya ingin melakukan konsultasi rental alat berat.
+
+Nama: ${nama}
+No. WhatsApp: ${telepon}
+Jenis Alat: ${alat}
+Lokasi Proyek: ${lokasi}
+Kebutuhan: ${pesan}`;
+
+
+window.open(
+"https://wa.me/6282190724298?text=" +
+encodeURIComponent(text),
+"_blank"
+);
+
+});
+
+</script>
 
 </body>
 </html>
