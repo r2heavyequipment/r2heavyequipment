@@ -1,624 +1,1104 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>R2 Heavy Equipment | Rental Alat Berat Indonesia</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="description" content="R2 Heavy Equipment menyediakan rental alat berat dan project support untuk kebutuhan konstruksi, pertambangan, hauling dan berbagai proyek di Indonesia.">
+  <title>
+    R2 Heavy Equipment | Rental & Project Support
+  </title>
 
-  <meta name="keywords" content="rental alat berat, sewa excavator, sewa dump truck, sewa crane, rental alat berat Indonesia, R2 Heavy Equipment">
+  <meta
+    name="description"
+    content="R2 Heavy Equipment adalah partner kebutuhan alat berat untuk proyek konstruksi, pertambangan, hauling dan pekerjaan lainnya di Indonesia."
+  >
 
-  <meta name="author" content="R2 Heavy Equipment">
+  <meta
+    name="keywords"
+    content="R2 Heavy Equipment, rental alat berat, sewa excavator, sewa dump truck, sewa crane, sewa wheel loader, project support"
+  >
+
+  <meta
+    name="author"
+    content="R2 Heavy Equipment"
+  >
 
   <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
-    :root {
-      --dark: #111315;
-      --dark2: #191c1f;
-      --yellow: #f5b800;
-      --yellow2: #ffc928;
-      --white: #ffffff;
-      --gray: #a8adb3;
-      --light: #f5f6f7;
-      --border: rgba(255,255,255,.09);
-    }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: #f5f6f7;
       color: #17191b;
+
       line-height: 1.6;
+
+      overflow-x: hidden;
     }
 
-    /* =========================
-       NAVBAR
-    ========================= */
+    img {
+      max-width: 100%;
+    }
 
-    nav {
+    a {
+      text-decoration: none;
+    }
+
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    :root {
+
+      --black: #0c0e0f;
+      --dark: #111315;
+      --dark2: #181b1e;
+
+      --yellow: #f5b800;
+      --yellow-light: #ffc928;
+
+      --white: #ffffff;
+
+      --gray: #858b91;
+      --gray-light: #e9ebed;
+
+      --section: #f5f6f7;
+
+      --container: 1180px;
+
+      --radius: 16px;
+
+      --shadow:
+        0 20px 50px rgba(0,0,0,.08);
+    }
+
+
+    /* =====================================================
+       CONTAINER
+    ===================================================== */
+
+    .container {
+
+      width: min(
+        calc(100% - 40px),
+        var(--container)
+      );
+
+      margin: auto;
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    .navbar {
+
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
-      z-index: 1000;
 
-      background: rgba(17,19,21,.95);
-      backdrop-filter: blur(12px);
+      z-index: 9999;
 
-      border-bottom: 1px solid var(--border);
+      background:
+        rgba(12,14,15,.92);
+
+      backdrop-filter:
+        blur(15px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
     }
 
-    .nav-container {
-      max-width: 1180px;
-      margin: auto;
 
-      height: 72px;
-      padding: 0 25px;
+    .nav-inner {
+
+      height: 78px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
     }
 
-    .brand {
+
+    /* LOGO */
+
+    .nav-brand {
+
       display: flex;
+
       align-items: center;
-      gap: 12px;
+
+      gap: 13px;
 
       color: white;
-      text-decoration: none;
-
-      font-weight: 800;
-      font-size: 20px;
     }
 
-    /* LOGO ASLI */
 
-    .brand-logo {
-      width: 48px;
-      height: 48px;
+    .nav-logo {
+
+      width: 55px;
+      height: 55px;
 
       object-fit: contain;
-      display: block;
 
-      border-radius: 8px;
+      display: block;
     }
 
-    .brand span small {
+
+    .brand-text {
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      letter-spacing: .4px;
+    }
+
+
+    .brand-text small {
+
       display: block;
 
-      font-size: 9px;
-      color: #aeb2b6;
+      margin-top: -2px;
 
-      letter-spacing: 1.5px;
-      margin-top: -3px;
+      font-size: 8px;
+
+      color: #999fa4;
+
+      letter-spacing: 1.8px;
     }
+
+
+    /* MENU */
 
     .nav-menu {
+
       display: flex;
+
       align-items: center;
-      gap: 30px;
+
+      gap: 32px;
     }
 
+
     .nav-menu a {
-      color: #ddd;
-      text-decoration: none;
+
+      color: #d9dcde;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      transition: .25s;
+    }
+
+
+    .nav-menu a:hover {
+
+      color: var(--yellow);
+    }
+
+
+    .nav-contact {
+
+      background: var(--yellow);
+
+      color: #111 !important;
+
+      padding:
+        11px 18px;
+
+      border-radius: 8px;
+
+      font-weight: 800 !important;
+    }
+
+
+    .nav-contact:hover {
+
+      background:
+        var(--yellow-light);
+
+      transform:
+        translateY(-2px);
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+
+      min-height: 850px;
+
+      padding:
+        170px 0 100px;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      color: white;
+
+      background:
+
+        radial-gradient(
+          circle at 80% 40%,
+          rgba(245,184,0,.16),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          110deg,
+          #090a0b 0%,
+          #111416 55%,
+          #1b1e21 100%
+        );
+    }
+
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: -350px;
+      bottom: -350px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(245,184,0,.15);
+
+      box-shadow:
+        0 0 0 80px rgba(245,184,0,.025),
+        0 0 0 160px rgba(245,184,0,.018);
+    }
+
+
+    .hero-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.1fr .9fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .hero-label {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--yellow);
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 22px;
+    }
+
+
+    .hero-label::before {
+
+      content: "";
+
+      width: 35px;
+      height: 2px;
+
+      background:
+        var(--yellow);
+    }
+
+
+    .hero h1 {
+
+      font-size:
+        clamp(44px, 6vw, 76px);
+
+      line-height: 1.02;
+
+      letter-spacing: -3px;
+
+      margin-bottom: 25px;
+    }
+
+
+    .hero h1 span {
+
+      color: var(--yellow);
+    }
+
+
+    .hero-description {
+
+      max-width: 650px;
+
+      color: #b9bec3;
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      margin-bottom: 35px;
+    }
+
+
+    .hero-buttons {
+
+      display: flex;
+
+      gap: 13px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding:
+        0 23px;
+
+      border-radius: 8px;
 
       font-size: 14px;
+
+      font-weight: 800;
+
+      transition: .25s;
+    }
+
+
+    .btn-primary {
+
+      background:
+        var(--yellow);
+
+      color: #111;
+    }
+
+
+    .btn-primary:hover {
+
+      background:
+        var(--yellow-light);
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 12px 30px rgba(245,184,0,.18);
+    }
+
+
+    .btn-dark-outline {
+
+      border:
+        1px solid rgba(255,255,255,.2);
+
+      color: white;
+    }
+
+
+    .btn-dark-outline:hover {
+
+      border-color:
+        var(--yellow);
+
+      color:
+        var(--yellow);
+    }
+
+
+    /* HERO LOGO BESAR */
+
+    .hero-visual {
+
+      min-height: 450px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      position: relative;
+    }
+
+
+    .hero-logo-box {
+
+      width: 390px;
+      height: 390px;
+
+      border-radius: 35px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background:
+        rgba(255,255,255,.035);
+
+      border:
+        1px solid rgba(255,255,255,.1);
+
+      box-shadow:
+        0 40px 100px rgba(0,0,0,.35);
+
+      position: relative;
+
+      backdrop-filter:
+        blur(10px);
+    }
+
+
+    .hero-logo-box::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 18px;
+
+      border:
+        1px solid rgba(245,184,0,.18);
+
+      border-radius: 25px;
+    }
+
+
+    .hero-logo {
+
+      width: 275px;
+      height: 275px;
+
+      object-fit: contain;
+
+      position: relative;
+
+      z-index: 2;
+
+      filter:
+        drop-shadow(
+          0 20px 30px
+          rgba(0,0,0,.3)
+        );
+    }
+
+
+    .hero-stats {
+
+      display: flex;
+
+      gap: 45px;
+
+      margin-top: 60px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .stat strong {
+
+      display: block;
+
+      font-size: 27px;
+
+      color: white;
+    }
+
+
+    .stat span {
+
+      display: block;
+
+      margin-top: 3px;
+
+      color: #747b81;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .7px;
+    }
+
+
+    /* =====================================================
+       SECTION GENERAL
+    ===================================================== */
+
+    section {
+
+      padding: 100px 0;
+    }
+
+
+    .section-top {
+
+      margin-bottom: 50px;
+
+      max-width: 680px;
+    }
+
+
+    .section-label {
+
+      color: #a47a00;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .section-title {
+
+      font-size:
+        clamp(32px,4vw,48px);
+
+      line-height: 1.1;
+
+      letter-spacing: -1.5px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .section-description {
+
+      color: #73797f;
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about {
+
+      background: white;
+    }
+
+
+    .about-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+
+    .about-image {
+
+      min-height: 500px;
+
+      border-radius: 25px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #171a1d,
+          #0d0f10
+        );
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .about-image::after {
+
+      content: "R2";
+
+      position: absolute;
+
+      right: -30px;
+
+      bottom: -90px;
+
+      font-size: 270px;
+
+      line-height: 1;
+
+      font-weight: 900;
+
+      color:
+        rgba(245,184,0,.06);
+    }
+
+
+    .about-image img {
+
+      width: 250px;
+      height: 250px;
+
+      object-fit: contain;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .about-content h3 {
+
+      font-size: 30px;
+
+      line-height: 1.2;
+
+      margin-bottom: 18px;
+    }
+
+
+    .about-content p {
+
+      color: #747a80;
+
+      font-size: 14px;
+
+      line-height: 1.85;
+
+      margin-bottom: 16px;
+    }
+
+
+    .about-points {
+
+      display: grid;
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+
+    .about-point {
+
+      display: flex;
+
+      gap: 12px;
+
+      align-items: flex-start;
+    }
+
+
+    .check {
+
+      width: 24px;
+      height: 24px;
+
+      flex: 0 0 24px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+        #fff3c8;
+
+      color:
+        #a47a00;
+
+      font-size: 12px;
+
+      font-weight: 900;
+    }
+
+
+    .about-point span {
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      color: #35393d;
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ===================================================== */
+
+    .services {
+
+      background:
+        #f5f6f7;
+    }
+
+
+    .service-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 20px;
+    }
+
+
+    .service-card {
+
+      padding: 32px;
+
+      background: white;
+
+      border:
+        1px solid #e5e7e9;
+
+      border-radius:
+        var(--radius);
 
       transition: .3s;
     }
 
-    .nav-menu a:hover {
-      color: var(--yellow);
-    }
 
-    .nav-button {
-      background: var(--yellow);
-      color: #111 !important;
+    .service-card:hover {
 
-      padding: 10px 17px;
+      transform:
+        translateY(-7px);
 
-      border-radius: 7px;
+      box-shadow:
+        var(--shadow);
 
-      font-weight: 700;
-    }
-
-    .nav-button:hover {
-      background: var(--yellow2);
+      border-color:
+        var(--yellow);
     }
 
 
-    /* =========================
-       HERO
-    ========================= */
+    .service-icon {
 
-    .hero {
-      min-height: 720px;
+      width: 58px;
+      height: 58px;
 
-      padding: 150px 25px 90px;
+      border-radius: 13px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
 
       background:
-        linear-gradient(
-          90deg,
-          rgba(10,11,12,.97) 0%,
-          rgba(10,11,12,.86) 45%,
-          rgba(10,11,12,.40) 100%
+        #fff4cf;
+
+      font-size: 26px;
+
+      margin-bottom: 22px;
+    }
+
+
+    .service-card h3 {
+
+      font-size: 19px;
+
+      margin-bottom: 9px;
+    }
+
+
+    .service-card p {
+
+      color: #7a8085;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       EQUIPMENT
+    ===================================================== */
+
+    .equipment {
+
+      background: white;
+    }
+
+
+    .equipment-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 22px;
+    }
+
+
+    .equipment-card {
+
+      background:
+        #151719;
+
+      color: white;
+
+      border-radius:
+        18px;
+
+      overflow: hidden;
+
+      transition: .3s;
+
+      border:
+        1px solid #272b2f;
+    }
+
+
+    .equipment-card:hover {
+
+      transform:
+        translateY(-7px);
+
+      box-shadow:
+        0 25px 50px rgba(0,0,0,.15);
+    }
+
+
+    .equipment-top {
+
+      height: 220px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+
+        radial-gradient(
+          circle,
+          rgba(245,184,0,.14),
+          transparent 55%
         ),
+
         linear-gradient(
           135deg,
           #25292d,
           #101214
         );
 
-      color: white;
-
-      position: relative;
-      overflow: hidden;
+      font-size: 75px;
     }
 
-    .hero::after {
-      content: "";
 
-      position: absolute;
+    .equipment-body {
 
-      width: 500px;
-      height: 500px;
-
-      border-radius: 50%;
-
-      background: rgba(245,184,0,.07);
-
-      right: -150px;
-      bottom: -180px;
+      padding: 25px;
     }
 
-    .hero-container {
-      max-width: 1180px;
-      margin: auto;
 
-      position: relative;
-      z-index: 2;
+    .equipment-category {
+
+      color:
+        var(--yellow);
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      font-weight: 900;
     }
 
-    .hero-content {
-      max-width: 720px;
+
+    .equipment-body h3 {
+
+      font-size: 22px;
+
+      margin:
+        6px 0 9px;
     }
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
 
-      color: var(--yellow);
+    .equipment-body p {
+
+      color: #92989d;
 
       font-size: 13px;
-      font-weight: 700;
 
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      line-height: 1.7;
 
       margin-bottom: 20px;
     }
 
-    .tag::before {
-      content: "";
 
-      width: 28px;
-      height: 2px;
+    .equipment-button {
 
-      background: var(--yellow);
-    }
+      display: block;
 
-    h1 {
-      font-size: clamp(42px, 6vw, 72px);
+      padding: 11px;
 
-      line-height: 1.05;
+      text-align: center;
 
-      letter-spacing: -2px;
+      background:
+        #24282b;
 
-      margin-bottom: 25px;
-    }
+      color: white;
 
-    h1 span {
-      color: var(--yellow);
-    }
+      border-radius: 7px;
 
-    .hero p {
-      color: #c5c9cd;
+      font-size: 12px;
 
-      font-size: 18px;
-
-      max-width: 610px;
-
-      margin-bottom: 35px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 13px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 14px 23px;
-
-      border-radius: 8px;
-
-      text-decoration: none;
-
-      font-weight: 700;
+      font-weight: 800;
 
       transition: .25s;
     }
 
-    .btn-primary {
-      background: var(--yellow);
-      color: #111;
-    }
 
-    .btn-primary:hover {
-      background: var(--yellow2);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid #555b60;
-      color: white;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--yellow);
-      color: var(--yellow);
-    }
-
-    .hero-stats {
-      display: flex;
-
-      gap: 45px;
-
-      margin-top: 70px;
-
-      flex-wrap: wrap;
-    }
-
-    .stat strong {
-      display: block;
-
-      font-size: 27px;
-
-      color: white;
-    }
-
-    .stat span {
-      color: #858b90;
-
-      font-size: 12px;
-    }
-
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    section {
-      padding: 90px 25px;
-    }
-
-    .container {
-      max-width: 1180px;
-      margin: auto;
-    }
-
-    .section-heading {
-      margin-bottom: 45px;
-    }
-
-    .section-heading .mini {
-      color: #ad8200;
-
-      font-size: 12px;
-
-      font-weight: 800;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 8px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(30px, 4vw, 45px);
-
-      line-height: 1.15;
-
-      margin-bottom: 12px;
-    }
-
-    .section-heading p {
-      color: #73787d;
-
-      max-width: 600px;
-    }
-
-
-    /* =========================
-       CATEGORY
-    ========================= */
-
-    .categories {
-      background: white;
-    }
-
-    .category-grid {
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 18px;
-    }
-
-    .category-card {
-      padding: 28px 22px;
-
-      border: 1px solid #e5e7e9;
-
-      border-radius: 13px;
-
-      background: white;
-
-      transition: .3s;
-    }
-
-    .category-card:hover {
-      transform: translateY(-5px);
-
-      border-color: var(--yellow);
-
-      box-shadow: 0 15px 35px rgba(0,0,0,.08);
-    }
-
-    .category-icon {
-      width: 55px;
-      height: 55px;
-
-      border-radius: 11px;
-
-      background: #fff5d5;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      font-size: 27px;
-
-      margin-bottom: 18px;
-    }
-
-    .category-card h3 {
-      font-size: 17px;
-
-      margin-bottom: 5px;
-    }
-
-    .category-card p {
-      color: #7c8186;
-
-      font-size: 13px;
-    }
-
-
-    /* =========================
-       UNITS
-    ========================= */
-
-    .units {
-      background: #f5f6f7;
-    }
-
-    .unit-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 22px;
-    }
-
-    .unit-card {
-      background: white;
-
-      border-radius: 14px;
-
-      overflow: hidden;
-
-      border: 1px solid #e5e7e9;
-
-      transition: .3s;
-    }
-
-    .unit-card:hover {
-      transform: translateY(-5px);
-
-      box-shadow: 0 18px 40px rgba(0,0,0,.09);
-    }
-
-    .unit-image {
-      height: 210px;
+    .equipment-button:hover {
 
       background:
-        linear-gradient(
-          135deg,
-          #252a2e,
-          #111315
-        );
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      font-size: 65px;
-    }
-
-    .unit-info {
-      padding: 22px;
-    }
-
-    .unit-label {
-      color: #a27a00;
-
-      font-size: 11px;
-
-      font-weight: 800;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
-    }
-
-    .unit-info h3 {
-      font-size: 21px;
-
-      margin: 5px 0 8px;
-    }
-
-    .unit-info p {
-      color: #777d82;
-
-      font-size: 13px;
-
-      margin-bottom: 17px;
-    }
-
-    .unit-btn {
-      display: block;
-
-      text-align: center;
-
-      padding: 11px;
-
-      background: #111315;
-
-      color: white;
-
-      text-decoration: none;
-
-      border-radius: 7px;
-
-      font-size: 13px;
-
-      font-weight: 700;
-    }
-
-    .unit-btn:hover {
-      background: var(--yellow);
+        var(--yellow);
 
       color: #111;
     }
 
 
-    /* =========================
-       ABOUT
-    ========================= */
+    /* =====================================================
+       WHY R2
+    ===================================================== */
 
     .why {
-      background: white;
+
+      background:
+        #f5f6f7;
     }
 
+
     .why-grid {
+
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        1fr 1fr;
 
       gap: 60px;
 
       align-items: center;
     }
 
-    .why-box {
-      background: #17191b;
 
-      border-radius: 18px;
+    .why-list {
 
-      min-height: 390px;
-
-      padding: 45px;
-
-      color: white;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-    .why-box::before {
-      content: "R2";
-
-      position: absolute;
-
-      right: -20px;
-      bottom: -50px;
-
-      font-size: 190px;
-
-      font-weight: 900;
-
-      color: rgba(245,184,0,.08);
-    }
-
-    .why-box h3 {
-      font-size: 30px;
-
-      max-width: 350px;
-
-      position: relative;
-    }
-
-    .why-box p {
-      color: #aeb3b7;
-
-      max-width: 390px;
-
-      margin-top: 15px;
-
-      position: relative;
-    }
-
-    .benefits {
       display: grid;
 
       gap: 25px;
     }
 
-    .benefit {
+
+    .why-item {
+
       display: flex;
 
       gap: 16px;
     }
 
-    .benefit-icon {
-      min-width: 45px;
 
-      height: 45px;
+    .why-icon {
 
-      border-radius: 9px;
+      width: 48px;
+      height: 48px;
 
-      background: #fff3c8;
+      min-width: 48px;
+
+      border-radius: 11px;
+
+      background:
+        #fff1bf;
 
       display: flex;
 
@@ -628,204 +1108,489 @@
       font-size: 20px;
     }
 
-    .benefit h3 {
+
+    .why-item h3 {
+
       font-size: 17px;
 
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
-    .benefit p {
+
+    .why-item p {
+
       color: #777d82;
 
       font-size: 13px;
+
+      line-height: 1.7;
     }
 
 
-    /* =========================
+    .why-panel {
+
+      background:
+        #111315;
+
+      color: white;
+
+      padding: 50px;
+
+      border-radius: 22px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .why-panel::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+      height: 260px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(245,184,0,.08);
+
+      right: -100px;
+
+      bottom: -100px;
+    }
+
+
+    .why-panel h3 {
+
+      font-size: 31px;
+
+      line-height: 1.2;
+
+      max-width: 430px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .why-panel p {
+
+      color: #aeb3b7;
+
+      max-width: 430px;
+
+      margin-top: 17px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    /* =====================================================
        PROCESS
-    ========================= */
+    ===================================================== */
 
     .process {
-      background: #f5f6f7;
+
+      background: white;
     }
 
+
     .process-grid {
+
       display: grid;
 
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns:
+        repeat(4,1fr);
 
       gap: 18px;
     }
 
+
     .process-card {
+
+      padding: 30px 24px;
+
+      border:
+        1px solid #e5e7e9;
+
+      border-radius:
+        14px;
+
       background: white;
 
-      padding: 28px 22px;
-
-      border-radius: 12px;
-
-      border: 1px solid #e5e7e9;
+      position: relative;
     }
 
-    .number {
-      color: var(--yellow);
 
-      font-size: 34px;
+    .process-number {
+
+      font-size: 38px;
 
       font-weight: 900;
+
+      color:
+        var(--yellow);
 
       margin-bottom: 15px;
     }
 
+
     .process-card h3 {
+
       font-size: 16px;
 
       margin-bottom: 7px;
     }
 
+
     .process-card p {
+
       color: #777d82;
 
       font-size: 13px;
+
+      line-height: 1.7;
     }
 
 
-    /* =========================
-       CTA
-    ========================= */
+    /* =====================================================
+       PROJECT SUPPORT
+    ===================================================== */
 
-    .cta {
-      background: #111315;
+    .support {
+
+      background:
+        #111315;
 
       color: white;
-
-      padding: 75px 25px;
-    }
-
-    .cta-container {
-      max-width: 1000px;
-
-      margin: auto;
-
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(30px, 4vw, 48px);
-
-      line-height: 1.1;
-
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      color: #aeb3b7;
-
-      max-width: 600px;
-
-      margin: 0 auto 28px;
     }
 
 
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #0b0c0d;
-
-      color: white;
-
-      padding: 50px 25px 25px;
-    }
-
-    .footer-grid {
-      max-width: 1180px;
-
-      margin: auto;
+    .support-grid {
 
       display: grid;
 
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns:
+        1fr 1fr;
 
-      gap: 50px;
-
-      padding-bottom: 40px;
-    }
-
-    .footer-brand {
-      display: flex;
+      gap: 70px;
 
       align-items: center;
+    }
 
-      gap: 12px;
+
+    .support h2 {
+
+      font-size:
+        clamp(32px,4vw,52px);
+
+      line-height: 1.08;
+
+      letter-spacing: -1.5px;
 
       margin-bottom: 18px;
     }
 
-    .footer-logo {
-      width: 50px;
-      height: 50px;
 
-      object-fit: contain;
+    .support h2 span {
 
-      border-radius: 8px;
+      color:
+        var(--yellow);
     }
 
-    footer h3 {
-      margin-bottom: 15px;
+
+    .support p {
+
+      color: #aeb3b7;
+
+      max-width: 600px;
+
+      font-size: 14px;
+
+      line-height: 1.85;
     }
 
-    footer p,
-    footer a {
-      color: #858b90;
 
-      font-size: 13px;
+    .support-box {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 12px;
     }
 
-    footer a {
+
+    .support-stat {
+
+      padding: 25px;
+
+      border:
+        1px solid rgba(255,255,255,.1);
+
+      border-radius: 12px;
+
+      background:
+        rgba(255,255,255,.025);
+    }
+
+
+    .support-stat strong {
+
       display: block;
 
-      text-decoration: none;
+      font-size: 27px;
 
-      margin-bottom: 8px;
+      color:
+        var(--yellow);
     }
+
+
+    .support-stat span {
+
+      color: #90969b;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .8px;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+
+      padding: 90px 0;
+
+      background:
+        var(--yellow);
+
+      color: #111;
+
+      text-align: center;
+    }
+
+
+    .cta h2 {
+
+      font-size:
+        clamp(32px,4vw,52px);
+
+      line-height: 1.1;
+
+      margin-bottom: 12px;
+    }
+
+
+    .cta p {
+
+      max-width: 650px;
+
+      margin:
+        0 auto 28px;
+
+      color: #4d3e00;
+
+      font-size: 14px;
+    }
+
+
+    .cta-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding:
+        0 25px;
+
+      border-radius: 8px;
+
+      background:
+        #111315;
+
+      color: white;
+
+      font-weight: 800;
+
+      font-size: 14px;
+
+      transition: .25s;
+    }
+
+
+    .cta-button:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 15px 30px rgba(0,0,0,.18);
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+      background:
+        #090a0b;
+
+      color: white;
+
+      padding:
+        65px 0 25px;
+    }
+
+
+    .footer-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        2fr 1fr 1fr;
+
+      gap: 60px;
+
+      padding-bottom: 45px;
+    }
+
+
+    .footer-brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .footer-logo {
+
+      width: 60px;
+      height: 60px;
+
+      object-fit: contain;
+    }
+
+
+    .footer-brand h3 {
+
+      font-size: 18px;
+    }
+
+
+    .footer-brand span {
+
+      color: #777d82;
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
+    }
+
+
+    .footer-about {
+
+      max-width: 430px;
+
+      color: #777d82;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+
+    footer h4 {
+
+      font-size: 13px;
+
+      margin-bottom: 18px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+
+    footer a {
+
+      display: block;
+
+      color: #777d82;
+
+      font-size: 13px;
+
+      margin-bottom: 9px;
+
+      transition: .2s;
+    }
+
 
     footer a:hover {
-      color: var(--yellow);
+
+      color:
+        var(--yellow);
     }
 
+
     .copyright {
-      max-width: 1180px;
 
-      margin: auto;
-
-      border-top: 1px solid #24272a;
+      border-top:
+        1px solid #202326;
 
       padding-top: 20px;
 
-      color: #666b70;
+      color: #555b60;
 
       font-size: 11px;
     }
 
 
-    /* =========================
+    /* =====================================================
        FLOATING WHATSAPP
-    ========================= */
+    ===================================================== */
 
     .floating-wa {
+
       position: fixed;
 
       right: 20px;
       bottom: 20px;
 
-      width: 55px;
-      height: 55px;
+      width: 58px;
+      height: 58px;
 
       border-radius: 50%;
 
-      background: #25D366;
+      background:
+        #25d366;
 
       color: white;
 
@@ -834,492 +1599,4 @@
       align-items: center;
       justify-content: center;
 
-      text-decoration: none;
-
-      font-size: 27px;
-
-      box-shadow: 0 8px 25px rgba(0,0,0,.25);
-
-      z-index: 999;
-
-      transition: .3s;
-    }
-
-    .floating-wa:hover {
-      transform: scale(1.08);
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-      .nav-menu {
-        display: none;
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .unit-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-    }
-
-
-    @media (max-width: 600px) {
-
-      .nav-container {
-        height: 64px;
-
-        padding: 0 17px;
-      }
-
-      .brand-logo {
-        width: 40px;
-        height: 40px;
-      }
-
-      .brand {
-        font-size: 15px;
-
-        gap: 9px;
-      }
-
-      .brand span small {
-        font-size: 7px;
-      }
-
-      .hero {
-        min-height: 680px;
-
-        padding: 125px 20px 60px;
-      }
-
-      h1 {
-        font-size: 43px;
-
-        letter-spacing: -1.5px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .hero-stats {
-        gap: 25px;
-
-        margin-top: 50px;
-      }
-
-      section {
-        padding: 65px 20px;
-      }
-
-      .category-grid,
-      .unit-grid,
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .unit-image {
-        height: 190px;
-      }
-
-      .why-box {
-        padding: 30px;
-
-        min-height: 300px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-      }
-
-      .cta {
-        padding: 60px 20px;
-      }
-
-      .floating-wa {
-        width: 50px;
-        height: 50px;
-
-        right: 15px;
-        bottom: 15px;
-      }
-
-    }
-
-  </style>
-</head>
-
-
-<body>
-
-
-  <!-- =========================
-       NAVBAR
-  ========================= -->
-
-  <nav>
-
-    <div class="nav-container">
-
-      <a href="#home" class="brand">
-
-        <!-- LOGO ASLI KAMU -->
-        <img
-          src="logo.png"
-          alt="R2 Heavy Equipment"
-          class="brand-logo"
-        >
-
-        <span>
-          R2 HEAVY EQUIPMENT
-          <small>RENTAL & PROJECT SUPPORT</small>
-        </span>
-
-      </a>
-
-
-      <div class="nav-menu">
-
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#unit">
-          Unit
-        </a>
-
-        <a href="#about">
-          Tentang Kami
-        </a>
-
-        <a href="#process">
-          Cara Kerja
-        </a>
-
-        <a
-          href="https://wa.me/6282190724298"
-          target="_blank"
-          class="nav-button"
-        >
-          Hubungi Kami
-        </a>
-
-      </div>
-
-    </div>
-
-  </nav>
-
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section class="hero" id="home">
-
-    <div class="hero-container">
-
-      <div class="hero-content">
-
-        <div class="tag">
-          Rental Alat Berat
-        </div>
-
-
-        <h1>
-          Solusi Alat Berat
-          <span>Untuk Proyek Anda.</span>
-        </h1>
-
-
-        <p>
-          R2 Heavy Equipment membantu menghubungkan kebutuhan proyek
-          dengan unit alat berat yang sesuai, siap digunakan untuk
-          berbagai kebutuhan konstruksi, pertambangan, hauling
-          dan pekerjaan lainnya.
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="#unit"
-            class="btn btn-primary"
-          >
-            Lihat Unit →
-          </a>
-
-
-          <a
-            href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20menanyakan%20unit%20alat%20berat."
-            target="_blank"
-            class="btn btn-outline"
-          >
-            WhatsApp Kami
-          </a>
-
-        </div>
-
-
-        <div class="hero-stats">
-
-          <div class="stat">
-
-            <strong>50+</strong>
-
-            <span>
-              Unit & Partner
-            </span>
-
-          </div>
-
-
-          <div class="stat">
-
-            <strong>24/7</strong>
-
-            <span>
-              Respon Project
-            </span>
-
-          </div>
-
-
-          <div class="stat">
-
-            <strong>Indonesia</strong>
-
-            <span>
-              Area Layanan
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       KATEGORI
-  ========================= -->
-
-  <section class="categories">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <div class="mini">
-          Kategori Unit
-        </div>
-
-        <h2>
-          Temukan Unit yang Anda Butuhkan
-        </h2>
-
-        <p>
-          Berbagai jenis alat berat untuk mendukung
-          kebutuhan proyek Anda.
-        </p>
-
-      </div>
-
-
-      <div class="category-grid">
-
-
-        <div class="category-card">
-
-          <div class="category-icon">
-            🚜
-          </div>
-
-          <h3>
-            Excavator
-          </h3>
-
-          <p>
-            PC75, PC200, PC300, PC400 dan berbagai
-            kelas excavator lainnya.
-          </p>
-
-        </div>
-
-
-        <div class="category-card">
-
-          <div class="category-icon">
-            🚛
-          </div>
-
-          <h3>
-            Dump Truck
-          </h3>
-
-          <p>
-            Dump truck berbagai kapasitas untuk
-            pekerjaan hauling material.
-          </p>
-
-        </div>
-
-
-        <div class="category-card">
-
-          <div class="category-icon">
-            🏗️
-          </div>
-
-          <h3>
-            Mobile Crane
-          </h3>
-
-          <p>
-            Solusi lifting untuk kebutuhan konstruksi
-            dan pekerjaan proyek.
-          </p>
-
-        </div>
-
-
-        <div class="category-card">
-
-          <div class="category-icon">
-            ⚙️
-          </div>
-
-          <h3>
-            Heavy Equipment
-          </h3>
-
-          <p>
-            Berbagai unit pendukung proyek lainnya
-            sesuai kebutuhan.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       UNIT
-  ========================= -->
-
-  <section class="units" id="unit">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <div class="mini">
-          Unit Pilihan
-        </div>
-
-        <h2>
-          Unit Alat Berat
-        </h2>
-
-        <p>
-          Beberapa jenis unit yang dapat kami bantu
-          sediakan sesuai kebutuhan proyek.
-        </p>
-
-      </div>
-
-
-      <div class="unit-grid">
-
-
-        <!-- EXCAVATOR -->
-
-        <div class="unit-card">
-
-          <div class="unit-image">
-            🚜
-          </div>
-
-          <div class="unit-info">
-
-            <div class="unit-label">
-              Excavator
-            </div>
-
-            <h3>
-              Excavator 20 Ton
-            </h3>
-
-            <p>
-              Cocok untuk pekerjaan earthwork, cut & fill,
-              loading dan pekerjaan konstruksi.
-            </p>
-
-            <a
-              href="https://wa.me/6282190724298?text=Halo%20R2,%20saya%20ingin%20menanyakan%20Excavator%2020%20Ton."
-              target="_blank"
-              class="unit-btn"
-            >
-              Tanya Unit
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- DUMP TRUCK -->
-
-        <div class="unit-card">
-
-          <div class="unit-image">
-            🚛
-          </div>
-
-          <div class="unit-info">
-
-            <div class="unit-label">
-              Dump Truck
-            </div>
-
-            <h3>
-              Dump Truck
-            </h3>
-
-            <p>
-              Untuk kebutuhan hauling material proyek
-              dengan berbagai kapasitas.
-  
+      font-size:
