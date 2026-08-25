@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>R2 Heavy Equipment | Rental Alat Berat</title>
+  <title>R2 Heavy Equipment | Rental Alat Berat Indonesia</title>
 
-  <meta name="description" content="R2 Heavy Equipment menyediakan rental alat berat untuk kebutuhan proyek di Indonesia. Excavator, dump truck, crane, wheel loader dan berbagai unit lainnya.">
+  <meta name="description" content="R2 Heavy Equipment menyediakan rental alat berat dan project support untuk kebutuhan konstruksi, pertambangan, hauling dan berbagai proyek di Indonesia.">
+
+  <meta name="keywords" content="rental alat berat, sewa excavator, sewa dump truck, sewa crane, rental alat berat Indonesia, R2 Heavy Equipment">
+
+  <meta name="author" content="R2 Heavy Equipment">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -34,23 +39,30 @@
       line-height: 1.6;
     }
 
-    /* NAVBAR */
+    /* =========================
+       NAVBAR
+    ========================= */
+
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(17,19,21,.94);
+
+      background: rgba(17,19,21,.95);
       backdrop-filter: blur(12px);
+
       border-bottom: 1px solid var(--border);
     }
 
     .nav-container {
       max-width: 1180px;
       margin: auto;
+
       height: 72px;
       padding: 0 25px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -59,30 +71,33 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+
       color: white;
       text-decoration: none;
+
       font-weight: 800;
       font-size: 20px;
     }
 
+    /* LOGO ASLI */
+
     .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--yellow);
-      color: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 19px;
+      width: 48px;
+      height: 48px;
+
+      object-fit: contain;
+      display: block;
+
+      border-radius: 8px;
     }
 
     .brand span small {
       display: block;
+
       font-size: 9px;
       color: #aeb2b6;
+
       letter-spacing: 1.5px;
       margin-top: -3px;
     }
@@ -96,7 +111,9 @@
     .nav-menu a {
       color: #ddd;
       text-decoration: none;
+
       font-size: 14px;
+
       transition: .3s;
     }
 
@@ -107,30 +124,59 @@
     .nav-button {
       background: var(--yellow);
       color: #111 !important;
+
       padding: 10px 17px;
+
       border-radius: 7px;
+
       font-weight: 700;
     }
 
-    /* HERO */
+    .nav-button:hover {
+      background: var(--yellow2);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
       min-height: 720px;
+
       padding: 150px 25px 90px;
+
       background:
-        linear-gradient(90deg, rgba(10,11,12,.97) 0%, rgba(10,11,12,.86) 45%, rgba(10,11,12,.40) 100%),
-        linear-gradient(135deg, #25292d, #101214);
+        linear-gradient(
+          90deg,
+          rgba(10,11,12,.97) 0%,
+          rgba(10,11,12,.86) 45%,
+          rgba(10,11,12,.40) 100%
+        ),
+        linear-gradient(
+          135deg,
+          #25292d,
+          #101214
+        );
+
       color: white;
+
       position: relative;
       overflow: hidden;
     }
 
     .hero::after {
       content: "";
+
       position: absolute;
+
       width: 500px;
       height: 500px;
+
       border-radius: 50%;
+
       background: rgba(245,184,0,.07);
+
       right: -150px;
       bottom: -180px;
     }
@@ -138,6 +184,7 @@
     .hero-container {
       max-width: 1180px;
       margin: auto;
+
       position: relative;
       z-index: 2;
     }
@@ -150,25 +197,34 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+
       color: var(--yellow);
+
       font-size: 13px;
       font-weight: 700;
+
       letter-spacing: 1px;
       text-transform: uppercase;
+
       margin-bottom: 20px;
     }
 
     .tag::before {
       content: "";
+
       width: 28px;
       height: 2px;
+
       background: var(--yellow);
     }
 
     h1 {
       font-size: clamp(42px, 6vw, 72px);
+
       line-height: 1.05;
+
       letter-spacing: -2px;
+
       margin-bottom: 25px;
     }
 
@@ -178,8 +234,11 @@
 
     .hero p {
       color: #c5c9cd;
+
       font-size: 18px;
+
       max-width: 610px;
+
       margin-bottom: 35px;
     }
 
@@ -191,12 +250,18 @@
 
     .btn {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       padding: 14px 23px;
+
       border-radius: 8px;
+
       text-decoration: none;
+
       font-weight: 700;
+
       transition: .25s;
     }
 
@@ -222,23 +287,33 @@
 
     .hero-stats {
       display: flex;
+
       gap: 45px;
+
       margin-top: 70px;
+
       flex-wrap: wrap;
     }
 
     .stat strong {
       display: block;
+
       font-size: 27px;
+
       color: white;
     }
 
     .stat span {
       color: #858b90;
+
       font-size: 12px;
     }
 
-    /* GENERAL */
+
+    /* =========================
+       GENERAL
+    ========================= */
+
     section {
       padding: 90px 25px;
     }
@@ -254,102 +329,149 @@
 
     .section-heading .mini {
       color: #ad8200;
+
       font-size: 12px;
+
       font-weight: 800;
+
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
+
       margin-bottom: 8px;
     }
 
     .section-heading h2 {
       font-size: clamp(30px, 4vw, 45px);
+
       line-height: 1.15;
+
       margin-bottom: 12px;
     }
 
     .section-heading p {
       color: #73787d;
+
       max-width: 600px;
     }
 
-    /* CATEGORY */
+
+    /* =========================
+       CATEGORY
+    ========================= */
+
     .categories {
       background: white;
     }
 
     .category-grid {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 18px;
     }
 
     .category-card {
       padding: 28px 22px;
+
       border: 1px solid #e5e7e9;
+
       border-radius: 13px;
+
       background: white;
+
       transition: .3s;
-      cursor: pointer;
     }
 
     .category-card:hover {
       transform: translateY(-5px);
+
       border-color: var(--yellow);
+
       box-shadow: 0 15px 35px rgba(0,0,0,.08);
     }
 
     .category-icon {
       width: 55px;
       height: 55px;
+
       border-radius: 11px;
+
       background: #fff5d5;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       font-size: 27px;
+
       margin-bottom: 18px;
     }
 
     .category-card h3 {
       font-size: 17px;
+
       margin-bottom: 5px;
     }
 
     .category-card p {
       color: #7c8186;
+
       font-size: 13px;
     }
 
-    /* UNITS */
+
+    /* =========================
+       UNITS
+    ========================= */
+
     .units {
       background: #f5f6f7;
     }
 
     .unit-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 22px;
     }
 
     .unit-card {
       background: white;
+
       border-radius: 14px;
+
       overflow: hidden;
+
       border: 1px solid #e5e7e9;
+
       transition: .3s;
     }
 
     .unit-card:hover {
       transform: translateY(-5px);
+
       box-shadow: 0 18px 40px rgba(0,0,0,.09);
     }
 
     .unit-image {
       height: 210px;
-      background: linear-gradient(135deg, #252a2e, #111315);
+
+      background:
+        linear-gradient(
+          135deg,
+          #252a2e,
+          #111315
+        );
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       font-size: 65px;
     }
 
@@ -359,189 +481,295 @@
 
     .unit-label {
       color: #a27a00;
+
       font-size: 11px;
+
       font-weight: 800;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
     }
 
     .unit-info h3 {
       font-size: 21px;
+
       margin: 5px 0 8px;
     }
 
     .unit-info p {
       color: #777d82;
+
       font-size: 13px;
+
       margin-bottom: 17px;
     }
 
     .unit-btn {
       display: block;
+
       text-align: center;
+
       padding: 11px;
+
       background: #111315;
+
       color: white;
+
       text-decoration: none;
+
       border-radius: 7px;
+
       font-size: 13px;
+
       font-weight: 700;
     }
 
     .unit-btn:hover {
       background: var(--yellow);
+
       color: #111;
     }
 
-    /* WHY US */
+
+    /* =========================
+       ABOUT
+    ========================= */
+
     .why {
       background: white;
     }
 
     .why-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 60px;
+
       align-items: center;
     }
 
     .why-box {
       background: #17191b;
+
       border-radius: 18px;
+
       min-height: 390px;
+
       padding: 45px;
+
       color: white;
+
       position: relative;
+
       overflow: hidden;
     }
 
     .why-box::before {
       content: "R2";
+
       position: absolute;
+
       right: -20px;
       bottom: -50px;
+
       font-size: 190px;
+
       font-weight: 900;
+
       color: rgba(245,184,0,.08);
     }
 
     .why-box h3 {
       font-size: 30px;
+
       max-width: 350px;
+
       position: relative;
     }
 
     .why-box p {
       color: #aeb3b7;
-      max-width: 350px;
+
+      max-width: 390px;
+
       margin-top: 15px;
+
       position: relative;
     }
 
     .benefits {
       display: grid;
+
       gap: 25px;
     }
 
     .benefit {
       display: flex;
+
       gap: 16px;
     }
 
     .benefit-icon {
       min-width: 45px;
+
       height: 45px;
+
       border-radius: 9px;
+
       background: #fff3c8;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
+      font-size: 20px;
     }
 
     .benefit h3 {
       font-size: 17px;
+
       margin-bottom: 3px;
     }
 
     .benefit p {
       color: #777d82;
+
       font-size: 13px;
     }
 
-    /* PROCESS */
+
+    /* =========================
+       PROCESS
+    ========================= */
+
     .process {
       background: #f5f6f7;
     }
 
     .process-grid {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 18px;
     }
 
     .process-card {
       background: white;
+
       padding: 28px 22px;
+
       border-radius: 12px;
+
       border: 1px solid #e5e7e9;
     }
 
     .number {
       color: var(--yellow);
+
       font-size: 34px;
+
       font-weight: 900;
+
       margin-bottom: 15px;
     }
 
     .process-card h3 {
       font-size: 16px;
+
       margin-bottom: 7px;
     }
 
     .process-card p {
       color: #777d82;
+
       font-size: 13px;
     }
 
-    /* CTA */
+
+    /* =========================
+       CTA
+    ========================= */
+
     .cta {
       background: #111315;
+
       color: white;
+
       padding: 75px 25px;
     }
 
     .cta-container {
       max-width: 1000px;
+
       margin: auto;
+
       text-align: center;
     }
 
     .cta h2 {
       font-size: clamp(30px, 4vw, 48px);
+
       line-height: 1.1;
+
       margin-bottom: 15px;
     }
 
     .cta p {
       color: #aeb3b7;
+
       max-width: 600px;
+
       margin: 0 auto 28px;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       background: #0b0c0d;
+
       color: white;
+
       padding: 50px 25px 25px;
     }
 
     .footer-grid {
       max-width: 1180px;
+
       margin: auto;
+
       display: grid;
+
       grid-template-columns: 2fr 1fr 1fr;
+
       gap: 50px;
+
       padding-bottom: 40px;
+    }
+
+    .footer-brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+    }
+
+    .footer-logo {
+      width: 50px;
+      height: 50px;
+
+      object-fit: contain;
+
+      border-radius: 8px;
     }
 
     footer h3 {
@@ -551,12 +779,15 @@
     footer p,
     footer a {
       color: #858b90;
+
       font-size: 13px;
     }
 
     footer a {
       display: block;
+
       text-decoration: none;
+
       margin-bottom: 8px;
     }
 
@@ -566,14 +797,63 @@
 
     .copyright {
       max-width: 1180px;
+
       margin: auto;
+
       border-top: 1px solid #24272a;
+
       padding-top: 20px;
+
       color: #666b70;
+
       font-size: 11px;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       FLOATING WHATSAPP
+    ========================= */
+
+    .floating-wa {
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      width: 55px;
+      height: 55px;
+
+      border-radius: 50%;
+
+      background: #25D366;
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-size: 27px;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+
+      z-index: 999;
+
+      transition: .3s;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.08);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 900px) {
 
       .nav-menu {
@@ -599,31 +879,42 @@
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
+
     }
+
 
     @media (max-width: 600px) {
 
       .nav-container {
         height: 64px;
+
         padding: 0 17px;
       }
 
       .brand-logo {
-        width: 37px;
-        height: 37px;
+        width: 40px;
+        height: 40px;
       }
 
       .brand {
-        font-size: 17px;
+        font-size: 15px;
+
+        gap: 9px;
+      }
+
+      .brand span small {
+        font-size: 7px;
       }
 
       .hero {
         min-height: 680px;
+
         padding: 125px 20px 60px;
       }
 
       h1 {
         font-size: 43px;
+
         letter-spacing: -1.5px;
       }
 
@@ -633,6 +924,7 @@
 
       .hero-stats {
         gap: 25px;
+
         margin-top: 50px;
       }
 
@@ -652,55 +944,100 @@
 
       .why-box {
         padding: 30px;
+
         min-height: 300px;
       }
 
       .footer-grid {
         grid-template-columns: 1fr;
+
         gap: 30px;
       }
 
       .cta {
         padding: 60px 20px;
       }
+
+      .floating-wa {
+        width: 50px;
+        height: 50px;
+
+        right: 15px;
+        bottom: 15px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVBAR -->
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
   <nav>
+
     <div class="nav-container">
 
-      <a href="#" class="brand">
-        <div class="brand-logo">R2</div>
+      <a href="#home" class="brand">
+
+        <!-- LOGO ASLI KAMU -->
+        <img
+          src="logo.png"
+          alt="R2 Heavy Equipment"
+          class="brand-logo"
+        >
 
         <span>
           R2 HEAVY EQUIPMENT
           <small>RENTAL & PROJECT SUPPORT</small>
         </span>
+
       </a>
 
+
       <div class="nav-menu">
-        <a href="#home">Home</a>
-        <a href="#unit">Unit</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#process">Cara Kerja</a>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#unit">
+          Unit
+        </a>
+
+        <a href="#about">
+          Tentang Kami
+        </a>
+
+        <a href="#process">
+          Cara Kerja
+        </a>
 
         <a
           href="https://wa.me/6282190724298"
           target="_blank"
-          class="nav-button">
+          class="nav-button"
+        >
           Hubungi Kami
         </a>
+
       </div>
 
     </div>
+
   </nav>
 
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <section class="hero" id="home">
 
     <div class="hero-container">
@@ -711,47 +1048,74 @@
           Rental Alat Berat
         </div>
 
+
         <h1>
           Solusi Alat Berat
           <span>Untuk Proyek Anda.</span>
         </h1>
 
+
         <p>
           R2 Heavy Equipment membantu menghubungkan kebutuhan proyek
           dengan unit alat berat yang sesuai, siap digunakan untuk
-          berbagai kebutuhan konstruksi dan pertambangan.
+          berbagai kebutuhan konstruksi, pertambangan, hauling
+          dan pekerjaan lainnya.
         </p>
+
 
         <div class="hero-buttons">
 
-          <a href="#unit" class="btn btn-primary">
+          <a
+            href="#unit"
+            class="btn btn-primary"
+          >
             Lihat Unit →
           </a>
+
 
           <a
             href="https://wa.me/6282190724298?text=Halo%20R2%20Heavy%20Equipment,%20saya%20ingin%20menanyakan%20unit%20alat%20berat."
             target="_blank"
-            class="btn btn-outline">
+            class="btn btn-outline"
+          >
             WhatsApp Kami
           </a>
 
         </div>
 
+
         <div class="hero-stats">
 
           <div class="stat">
+
             <strong>50+</strong>
-            <span>Unit & Partner</span>
+
+            <span>
+              Unit & Partner
+            </span>
+
           </div>
 
+
           <div class="stat">
+
             <strong>24/7</strong>
-            <span>Respon Project</span>
+
+            <span>
+              Respon Project
+            </span>
+
           </div>
 
+
           <div class="stat">
+
             <strong>Indonesia</strong>
-            <span>Area Layanan</span>
+
+            <span>
+              Area Layanan
+            </span>
+
           </div>
 
         </div>
@@ -763,7 +1127,11 @@
   </section>
 
 
-  <!-- KATEGORI -->
+
+  <!-- =========================
+       KATEGORI
+  ========================= -->
+
   <section class="categories">
 
     <div class="container">
@@ -779,55 +1147,85 @@
         </h2>
 
         <p>
-          Berbagai jenis alat berat untuk mendukung kebutuhan
-          proyek Anda.
+          Berbagai jenis alat berat untuk mendukung
+          kebutuhan proyek Anda.
         </p>
 
       </div>
 
+
       <div class="category-grid">
 
-        <div class="category-card">
-          <div class="category-icon">🚜</div>
 
-          <h3>Excavator</h3>
+        <div class="category-card">
+
+          <div class="category-icon">
+            🚜
+          </div>
+
+          <h3>
+            Excavator
+          </h3>
 
           <p>
-            PC75, PC200, PC300, PC400 dan kelas lainnya.
+            PC75, PC200, PC300, PC400 dan berbagai
+            kelas excavator lainnya.
           </p>
+
         </div>
 
 
         <div class="category-card">
-          <div class="category-icon">🚛</div>
 
-          <h3>Dump Truck</h3>
+          <div class="category-icon">
+            🚛
+          </div>
+
+          <h3>
+            Dump Truck
+          </h3>
 
           <p>
-            Dump truck berbagai kapasitas untuk pekerjaan angkut.
+            Dump truck berbagai kapasitas untuk
+            pekerjaan hauling material.
           </p>
+
         </div>
 
 
         <div class="category-card">
-          <div class="category-icon">🏗️</div>
 
-          <h3>Mobile Crane</h3>
+          <div class="category-icon">
+            🏗️
+          </div>
+
+          <h3>
+            Mobile Crane
+          </h3>
 
           <p>
-            Solusi lifting untuk kebutuhan proyek.
+            Solusi lifting untuk kebutuhan konstruksi
+            dan pekerjaan proyek.
           </p>
+
         </div>
 
 
         <div class="category-card">
-          <div class="category-icon">⚙️</div>
 
-          <h3>Heavy Equipment</h3>
+          <div class="category-icon">
+            ⚙️
+          </div>
+
+          <h3>
+            Heavy Equipment
+          </h3>
 
           <p>
-            Berbagai unit pendukung proyek lainnya.
+            Berbagai unit pendukung proyek lainnya
+            sesuai kebutuhan.
           </p>
+
         </div>
 
       </div>
@@ -837,7 +1235,11 @@
   </section>
 
 
-  <!-- UNIT -->
+
+  <!-- =========================
+       UNIT
+  ========================= -->
+
   <section class="units" id="unit">
 
     <div class="container">
@@ -853,8 +1255,8 @@
         </h2>
 
         <p>
-          Beberapa jenis unit yang dapat kami bantu sediakan
-          sesuai kebutuhan proyek.
+          Beberapa jenis unit yang dapat kami bantu
+          sediakan sesuai kebutuhan proyek.
         </p>
 
       </div>
@@ -889,7 +1291,8 @@
             <a
               href="https://wa.me/6282190724298?text=Halo%20R2,%20saya%20ingin%20menanyakan%20Excavator%2020%20Ton."
               target="_blank"
-              class="unit-btn">
+              class="unit-btn"
+            >
               Tanya Unit
             </a>
 
@@ -919,161 +1322,4 @@
             <p>
               Untuk kebutuhan hauling material proyek
               dengan berbagai kapasitas.
-            </p>
-
-            <a
-              href="https://wa.me/6282190724298?text=Halo%20R2,%20saya%20ingin%20menanyakan%20Dump%20Truck."
-              target="_blank"
-              class="unit-btn">
-              Tanya Unit
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- CRANE -->
-
-        <div class="unit-card">
-
-          <div class="unit-image">
-            🏗️
-          </div>
-
-          <div class="unit-info">
-
-            <div class="unit-label">
-              Crane
-            </div>
-
-            <h3>
-              Mobile Crane
-            </h3>
-
-            <p>
-              Pilihan unit crane untuk kebutuhan lifting
-              dan pekerjaan konstruksi.
-            </p>
-
-            <a
-              href="https://wa.me/6282190724298?text=Halo%20R2,%20saya%20ingin%20menanyakan%20Mobile%20Crane."
-              target="_blank"
-              class="unit-btn">
-              Tanya Unit
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- WHEEL LOADER -->
-
-        <div class="unit-card">
-
-          <div class="unit-image">
-            🚜
-          </div>
-
-          <div class="unit-info">
-
-            <div class="unit-label">
-              Wheel Loader
-            </div>
-
-            <h3>
-              Wheel Loader
-            </h3>
-
-            <p>
-              Mendukung pekerjaan loading, stockpile,
-              material handling dan lainnya.
-            </p>
-
-            <a
-              href="https://wa.me/6282190724298?text=Halo%20R2,%20saya%20ingin%20menanyakan%20Wheel%20Loader."
-              target="_blank"
-              class="unit-btn">
-              Tanya Unit
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- VIBRO -->
-
-        <div class="unit-card">
-
-          <div class="unit-image">
-            ⚙️
-          </div>
-
-          <div class="unit-info">
-
-            <div class="unit-label">
-              Compactor
-            </div>
-
-            <h3>
-              Vibro Roller
-            </h3>
-
-            <p>
-              Untuk pekerjaan pemadatan tanah dan
-              material konstruksi.
-            </p>
-
-            <a
-              href="https://wa.me/6282190724298?text=Halo%20R2,%20saya%20ingin%20menanyakan%20Vibro%20Roller."
-              target="_blank"
-              class="unit-btn">
-              Tanya Unit
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- REQUEST -->
-
-        <div class="unit-card">
-
-          <div class="unit-image">
-            🚧
-          </div>
-
-          <div class="unit-info">
-
-            <div class="unit-label">
-              Lainnya
-            </div>
-
-            <h3>
-              Request Unit
-            </h3>
-
-            <p>
-              Tidak menemukan unit yang dicari?
-              Hubungi kami untuk kebutuhan khusus.
-            </p>
-
-            <a
-              href="https://wa.me/6282190724298?text=Halo%20R2,%20saya%20ingin%20request%20unit%20alat%20berat."
-              target="_blank"
-              class="unit-btn">
-              Request Unit
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    </section>
+  
